@@ -22,7 +22,7 @@
   \begin{itemize}
   \item Introduction au langage Python.
   \item Principes de programmation.
-  \item Développement colaboratif.
+  \item Développement collaboratif.
   \item Application à la bio\-informatique. 
   \end{itemize}
 \end{frame}
@@ -38,14 +38,14 @@
 
 \begin{frame}{À savoir}
   \begin{itemize}
-  \item Très peu de slides: Python et GIT disposent de beaucoup de resources (pédagogiques, références) auquelles nous renvérons autant que possible.
-  \item Basé sur l'exemple et les traveaux pratique: il faudra coder, écrire, collaborer.
+  \item Très peu de slides: Python et GIT disposent de beaucoup de ressources (pédagogiques, références) auxquelles nous renverrons autant que possible.
+  \item Basé sur l'exemple et les travaux pratique: il faudra coder, écrire, collaborer.
   \item Non exhaustif.
   \end{itemize}
 \end{frame}
 
 \begin{frame}{Python Origin's}
-  Crée à la fin des années 80 par {\em Guido Van Rossum pour}, pour faire autre chose, pendant ses vacances de Noel.
+  Crée à la fin des années 80 par {\em Guido Van Rossum pour}, pour faire autre chose, pendant ses vacances de Noël.
   \begin{itemize}
   \item Initié aux Pays-Bas dans le cadre du projet Amobea (mort en 1996)...
   \item ..puis au CNRI, puis à BeOpen, puis à la Python Software Foundation.
@@ -55,7 +55,7 @@
 \begin{frame}{Des raisons du succès}
   Initié comme langage de script, Python promeut favorise avant tout la facilité et le confort d'utilisation.
   \begin{itemize}
-  \item La plupart des librarie ``connues'' possède une interface Python.
+  \item La plupart des librairies ``connues'' possède une interface Python.
   \item Il est facile de ``bricoler'' un script qui vous passe par la tête.
   \item Le langage offre {\em une} façon, facile à retenir, de faire les choses.
   \item La documentation fait très souvent référence au \href{https://en.wikipedia.org/wiki/Monty_Python\%27s_Flying_Circus}{Monty Python's Flying Circus}.
@@ -111,7 +111,7 @@
 \begin{frame}{Autour de GIT}
   GIT supporte plusieurs modèles de développement, et offre parfois des outils associés.
   \begin{itemize}
-  \item Le {\em modèle dictatorial} (exemple: Linux), modèle pyramidal où chaque membre fait confiance à un nombre restraint de sous-fifres.
+  \item Le {\em modèle dictatorial} (exemple: Linux), modèle pyramidal où chaque membre fait confiance à un nombre restreint de sous-fifres.
   \item Le modèle collaboratif, à base de ``pull requests'', mis en œuvre par GITHub notamment.
   \item Le modèle ``moi et mon laptop''.
   \end{itemize}
@@ -141,7 +141,7 @@ Ex: trouver comment lancer le mode interactif en partant de google/qwant/duckduc
   \item ... définis comme étant le type ``naturel'' de la machine.
   \item Supporte les 4 opération de base, les exposant, le parenthésage..
   \end{itemize}
-  Exercises:
+  Exercices:
   \begin{itemize}
   \item Évaluer des expressions, mélanger les types.
   \item Types complexes ?
@@ -153,7 +153,7 @@ Ex: trouver comment lancer le mode interactif en partant de google/qwant/duckduc
 
 \begin{frame}[fragile]\frametitle{Chaînes de caractères}
   \begin{itemize}
-  \item Séquence de caratère entres {\verb|'simple quote'|} ou {\verb|"double quotes"|}
+  \item Séquence de caractères entres {\verb|'simple quotte'|} ou {\verb|"double quottes"|}
   \item Peuvent être affichées avec {\verb|print|}.
   \item On peut afficher de longues chaînes sur plusieurs ligne, ou mettre des retour à la ligne dans une chaîne.
   \end{itemize}
@@ -193,7 +193,7 @@ Ex: trouver comment lancer le mode interactif en partant de google/qwant/duckduc
   Pour cela on a besoin d'un notion de vrai et de faux représentées en programmation par la notion d'expression booléenne.
   \begin{itemize}
     \item Une expression booléenne peut avoir deux valeur: \verb|True| et \verb|False|.
-    \item Resultat d'une comparaison (\verb|>, <, ==, !=, >=, <=|)
+    \item Résultat d'une comparaison (\verb|>, <, ==, !=, >=, <=|)
     \item ... ou d'une conversion (nombres, liste etc..), éventuellement explicite: {\bf bool(}\verb|<expr>|{\bf{)}}.
   \end{itemize}
   Exercice: tester des expressions: entiers, réels, liste...
@@ -205,23 +205,46 @@ Ex: trouver comment lancer le mode interactif en partant de google/qwant/duckduc
   Exercices:
   \begin{itemize}
   \item Écrire les 10 premiers cubes.
-  \item Écrire les premiers élément de la suite de Fibonacci.
+  \item Écrire les premiers éléments de la suite de Fibonacci.
   \end{itemize}
 \end{frame}
 
 \begin{frame}[fragile]{Premier programme}
   \begin{columns}
-    \begin{column}
-      Dans le fichier {\it fibo.py}:\newline
-      \fbox{\lstinputlisting[language=Python]{../examples/fibo1.py}}
-    \end{column}
-    \begin{column}
-      À exécuter avec:
-      \begin{fbox}
-        \fbox{\lstinputlisting{../examples/fibo1.txt}}
-      \end{fbox}
-    \end{column}
+    \column{0.4\textwidth}
+    Dans le fichier {\it fibo.py}:\newline
+    \fbox{\lstinputlisting[language=Python]{../examples/fibo1.py}}
+    \column{0.4\textwidth}
+    À exécuter avec:
+    \fbox{\lstinputlisting{../examples/fibo1.txt}}
   \end{columns}
 \end{frame}
 
+\begin{frame}[fragile]{Premier programme autonome}
+  On souhaite exécuter le programme directement:
+  \begin{itemize}
+  \item Il doit être exécutable.
+  \end{itemize}
+  \fbox{\lstinputlisting{../examples/fibo2_1.txt}}
+\end{frame}
+
+\begin{frame}[fragile]{Premier programme autonome}
+  Il faut également préciser comment il doit être exécuté:
+  \fbox{\lstinputlisting{../examples/fibo2_2.txt}}
+
+  On préférera la ligne \href{https://en.wikipedia.org/wiki/Shebang_(Unix)}{shebang} suivante:
+\begin{verbatim}
+!#/usr/bin/env python
+\end{verbatim}
+\end{frame}
+
+\begin{frame}{Arguments}
+  On souhaite pouvoir préciser combien de nombre de Fibonacci le programme affichera.
+
+  Exercice: Retrouver la documentation concernant l'invocation de l'interprète, un indice s'y trouve peut-être.
+  
+  
+  
+  Exercice: Modifier le programme pour que l'on puisse lui transmettre ce nombre. 
+\end{frame}
 \end{document}

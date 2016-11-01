@@ -1,0 +1,10 @@
+$ ./fibo2.py 
+bash: ./fibo2.py: Permission denied
+$ ls -l ./fibo2.py 
+-rw-rw-r-- 1 [...] ./fibo2.py
+$ chmod a+x ./fibo2.py
+$ ls -l ./fibo2.py 
+-rwxrwxr-x 1 [...] ./fibo2.py
+$ ./fibo2.py 
+./fibo2.py: line 1: [not happy]
+$

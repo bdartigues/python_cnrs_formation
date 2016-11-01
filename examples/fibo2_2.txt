@@ -1,0 +1,10 @@
+$ emacs ./fibo2.py 
+$ more fibo2.py
+#!/usr/bin/python
+a, b = 0, 1
+[...]
+$ ./fibo2.py
+1
+[...]
+13
+$ 

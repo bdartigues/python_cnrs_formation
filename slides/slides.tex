@@ -260,13 +260,124 @@ Ex: trouver comment lancer le mode interactif en partant de google/qwant/duckduc
 \end{frame}
 
 \begin{frame}{Premier dépôt}
-  Exercice: créer un dépôt local pour gérer l'évoltion des codes développés pendant la formation.
+  Exercice: créer un dépôt local pour gérer l'évolution des codes développés pendant la formation.
   \begin{itemize}
   \item {\tt git help init}
   \item {\tt git help add}
   \item {\tt git help commit}
   \item {\tt git help checkout}
+  \item {\tt git help status}
   \end{itemize}
+\end{frame}
+
+\begin{frame}{Test, Arguments}
+  
+  Exercices:
+  \begin{itemize}
+  \item On souhaite rendre l'utilisation de argument obligatoire, et afficher un message explicatif si cet argument unique n'est pas fournis.
+  \item ``Commiter''  la nouvelle version.
+  \item Retrouver la version précedente.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Test, Arguments}
+  
+  Exercices:
+  \begin{itemize}
+  \item On souhaite rendre l'utilisation de argument obligatoire, et afficher un message explicatif si cet argument unique n'est pas fournis.
+  \item ``Commiter''  la nouvelle version.
+  \item Retrouver la version précedente.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Boucles, liste}
+  Exercices:
+  \begin{itemize}
+  \item Écrire un programme qui affiche la moyenne de ses argument.
+  \item Lui faire également afficher la moyenne quadratique de ses arguments.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]\frametitle{Fonctions}
+  Syntaxe:
+  \fbox{\lstinputlisting[firstline=5,lastline=8,language=Python]{../examples/moyenne.py}}
+
+  Exercices:
+  \begin{itemize}
+  \item Écrire une fonction calculant la moyenne d'un nombre arbitraire de nombres.
+  \item Reprendre l'exemple précédant en utilisant cette fonction.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Fonctions}
+  La fonction peut être vue comme unitée de compréhension.
+  
+  Découper son programme en fonction permet de le diviser en unités compréhensible quand sa taille augmente.
+
+  \begin{itemize}
+  \item De l'extérieur: on doit pouvoir comprendre ce que fait la fonction sans avoir besoin de lire son code.
+  \item De l'interieur: on doit pouvoir vérifier que la fonction fait ce qu'elle est supposée faire.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Fonctions}
+  {\em De l'extérieur}
+  \begin{itemize}
+  \item Combien de mots vous faut il pour expliquer ce que fait votre fonction ?
+  \item Est-ce que votre fonction fait une chose, et une seule.
+  \item Son nom signifie t-il quelque chose de clair pour les personnes qui seront appelés à l'utiliser.
+  \item Avez vous besoin de dire {\em comment} elle le fait.
+  \end{itemize}    
+  {\em De l'intérieur:}
+  \begin{itemize}
+  \item Un collègue peut-il vérifier que la fonction est correcte (fait ce qu'elle prétend faire, et rien d'autre).
+  \item Sa taille lui permet elle de tenir sur une fenêtre de taile moyenne ?
+  \item Les noms des variables utilisés sont-il significatifs.
+  \item Est ce que je la comprendrai dans 6 mois.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]\frametitle{Reccursivité}
+  Une fonction peut s'appeler elle même:
+  
+  \fbox{\lstinputlisting[firstline=5,lastline=10,language=Python]{../examples/moyenne.py}}
+
+  C'est un choix d'implémentation.
+\end{frame}
+
+\begin{frame}{Saisie utilisateur}
+  La fonction {\tt raw\_input} permet de lire ce qui est tapé au clavier.
+
+  Exercice:
+  \begin{itemize}
+  \item Ecrire une fonction qui retourne {\tt True} ou {\tt False} suivant que l'utilisateur est entré {\tt oui} ou {\tt non}.
+  \item Autoriser optionnellement les majuscules
+  \item Accepter deux listes: les chaînes correspondant à vrai, et celle correspondant à faux.
+  \item Accepter un paramètre spécifiant le nombre d'essais autorisés.
+  \end{itemize}
+\end{frame}
+
+ \begin{frame}{Paramètres par défaut}
+   Exercice: Donner des valeurs par défaut 'raisonnables' pour tout les paramètres sauf le prompt.
+ \end{frame}
+
+
+\begin{frame}{Tuples}
+  Un tuple est un ``paquet'' ordonné et non modifiable de valeurs (éventuellement, d'autres tuples).
+  
+  \center{\fbox{\tt t = 1, 42, 'bob', 3.14 }}
+  
+  Se consulte comme une liste:
+  \center{\fbox{\tt nom = t[2] }}
+  
+  Peut être utilisé pour affecter plusieurs variables:
+  \center{\fbox{\tt nom, age = `Bob', 42 }}
+  
+  Peut être utilisé pour affecter plusieurs variables:
+  \center{\fbox{\tt quotient, reste = divmod(42, 7) }}
+  
+  Peut être mis dans dans des listes:
+  \center{\fbox{\tt student=[('Bob', 15), ('Alice', 16), ('Jane',15) ]}}
 \end{frame}
 
 \end{document}

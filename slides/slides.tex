@@ -360,12 +360,12 @@ Ex: trouver comment lancer le mode interactif en partant de google/qwant/duckduc
   Exercice: Donner des valeurs par défaut 'raisonnables' pour tout les paramètres sauf le prompt.
 \end{frame}
 
-\begin{frame}[fragile]{Fonction comme variable}
+\begin{frame}[fragile]\frametitle{Fonction comme variable}
   Une fonction est un objet (à peu de choses près) comme un autre.
   \fbox{\lstinputlisting{../examples/fct1classe.txt}}
 \end{frame}
 
-\begin{frame}[fragile]{Fonction comme argument}
+\begin{frame}[fragile]\frametitle{Fonction comme argument}
   Exercices:
   \begin{itemize}
   \item Écrire une fonction {\bf appliquer} prenant en argument une liste et une fonction et affichant les images des éléments.
@@ -374,7 +374,7 @@ Ex: trouver comment lancer le mode interactif en partant de google/qwant/duckduc
   \end{itemize}
 \end{frame}
 
-\begin{frame}[fragile]{Modules}
+\begin{frame}[fragile]\frametitle{Modules}
   Constats:
   \begin{itemize}
   \item Devoir retaper son code à chaque nouvelle session python est fastidieux.
@@ -387,7 +387,7 @@ Ex: trouver comment lancer le mode interactif en partant de google/qwant/duckduc
   \end{itemize}
 \end{frame}
 
-\begin{frame}[fragile]{Modules}
+\begin{frame}[fragile]\frametitle{Modules}
   \begin{columns}
     \column{0.4\textwidth}
     fibo.py:
@@ -401,7 +401,7 @@ Ex: trouver comment lancer le mode interactif en partant de google/qwant/duckduc
   \fbox{\lstinputlisting{../examples/import.log}}
 \end{frame}
 
-\begin{frame}[fragile]{Nommage}
+\begin{frame}[fragile]\frametitle{Nommage}
   
   Le nommage des entités (fonctions, variables, modules, classe..) est l'un des problèmes les plus sous-estimés par les aspirants développeurs.\linebreak
   Un ``bon'' nom:
@@ -421,7 +421,7 @@ Ex: trouver comment lancer le mode interactif en partant de google/qwant/duckduc
   
 \end{frame}
 
-\begin{frame}[fragile]{Import}
+\begin{frame}[fragile]\frametitle{Import}
   
   L'utilisation de modules permet de faciliter le travail de nommage.
   \begin{itemize}
@@ -433,7 +433,7 @@ Ex: trouver comment lancer le mode interactif en partant de google/qwant/duckduc
   \fbox{\lstinputlisting{../examples/importall.log}}
 \end{frame}
 
-\begin{frame}[fragile]{Modules ou commande ?}
+\begin{frame}[fragile]\frametitle{Modules ou commande ?}
   Parfois, la limite entre module et commande n'est pas claire: {\bf facto.py} peut être utilisé à la fois comme module et comme commande:
 
   Il est possible de se baser sur le {\em nom courant} du module pour distinguer un appel de commande d'une importation de module.
@@ -480,7 +480,7 @@ Ex: trouver comment lancer le mode interactif en partant de google/qwant/duckduc
   \end{itemize}
 \end{frame}
 
-\begin{frame}[fragile]{fichiers textes en Python}
+\begin{frame}[fragile]\frametitle{fichiers textes en Python}
   Exercices:
   \begin{itemize}
   \item Trouver la section consacrées au lecture/écriture de fichiers texte dans le tutoriel python.
@@ -493,5 +493,53 @@ Ex: trouver comment lancer le mode interactif en partant de google/qwant/duckduc
     \end{itemize}
   \end{itemize}
 \end{frame}
+
+\begin{frame}[fragile]\frametitle{Git et les branches}
+  \begin{itemize}
+  \item Git permet non seulement de versionner, mais aussi de collaborer, y compris avec soi.
+  \item Votre dépôt peut héberger autant de {\em versions} différentes de votre code que vous le souhaitez.
+  \item Les branche vont nous permètre de:
+    \begin{itemize}
+    \item Faire des essais sans comprometre votre code.
+    \item De travailler sur différentes fonctionnalités en parallele.
+    \item De controler les integrations de ces fonctionnalités dans votre code {``principal''}.
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]\frametitle{Git et les branches}
+  Exercices:
+  \begin{itemize}
+  \item Créer un nouveau dépot avec {\tt git init}
+  \item Y ajouter le script python {\bf facto.py}, l'intégrer, commiter, taper {\tt git branch -v}
+  \item Créer une nouvelle branche nommée {\bf develop}, qu'observe t'on ?
+  \item Ajouter un fichier {\bf README}, controlé par git, et modifier le script.
+  \item Observer les différences entre les branches {\bf develop} et {\bf master}.
+  \item Sur la branche {\bf master}, modifier, différement, le script {\bf facto.py}.
+  \item Intégrer les modification de la branche {\bf develop} dans la branche {\bf master}.
+  \item Intégrer les modification de la branche {\bf master} dans la branche {\bf develop}.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]\frametitle{Git et remote}
+  Git est (aussi) un système de versionnage {\em distribué}.
+  \begin{itemize}
+    \item De même qu'il est possible de ``synchronizer'' des branches entre elles, il est possible de synchronizer des dépôts.
+    \item Même si cela n'a rien d'obligatoire, on décide souvent de donner à l'un de ses dépôt un rôle de dépôt de référence. Les dépôt sont généralement organisés en arbres de profondeur 1 dont le dépôt de référence est la racine.
+    \item Sans discipline, la situation devient rapidement ingérable.
+    \item Plusieurs platforme proposent des service d'hébergement de dépôt git: \url{https://github.com}, \url{https://about.gitlab.com}...
+  \end{itemize}
+\end{frame}
+  
+\begin{frame}[fragile]\frametitle{Git et remote}
+  Exercices: 
+  \begin{itemize}
+  \item Cloner le dépôt {\bf biopyt}
+  \item Utiliser la commande {\tt git remote -v} et assurez vous que vous êtes bien sur la branche {\bf master}.
+  \item Dans le répertoire {\tt examples/users/users.txt}, ajouter une ligne en respectant le format utilisé.
+  \item À l'aide de la commande {\tt git push ...} intégrez votre modification sur le dépôt d'origine. Attention, suivant l'ordre dans lequel vous arrivez, les chose seront plus ou moins simples (mais toujours gérable).
+  \end{itemize}
+\end{frame}
+
 
 \end{document}

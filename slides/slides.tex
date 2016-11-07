@@ -249,7 +249,7 @@ Ex: trouver comment lancer le mode interactif en partant de google/qwant/duckduc
 \begin{frame}{GIT, phase d'approche}
   Une première utilisation, minimaliste, de {\bf git} consiste à s'en servir de versionnage local.
   \begin{itemize}
-  \item On empille les versions, mais sans avoir à gérer une plétore de copies.
+  \item On empile les versions, mais sans avoir à gérer une pléthore de copies.
   \item en cas de problèmes, on peut retrouver n'importe quelle version.
   \end{itemize}
   Documentations:
@@ -276,7 +276,7 @@ Ex: trouver comment lancer le mode interactif en partant de google/qwant/duckduc
   \begin{itemize}
   \item On souhaite rendre l'utilisation de argument obligatoire, et afficher un message explicatif si cet argument unique n'est pas fournis.
   \item ``Commiter''  la nouvelle version.
-  \item Retrouver la version précedente.
+  \item Retrouver la version précédente.
   \end{itemize}
 \end{frame}
 
@@ -286,7 +286,7 @@ Ex: trouver comment lancer le mode interactif en partant de google/qwant/duckduc
   \begin{itemize}
   \item On souhaite rendre l'utilisation de argument obligatoire, et afficher un message explicatif si cet argument unique n'est pas fournis.
   \item ``Commiter''  la nouvelle version.
-  \item Retrouver la version précedente.
+  \item Retrouver la version précédente.
   \end{itemize}
 \end{frame}
 
@@ -310,13 +310,13 @@ Ex: trouver comment lancer le mode interactif en partant de google/qwant/duckduc
 \end{frame}
 
 \begin{frame}{Fonctions}
-  La fonction peut être vue comme unitée de compréhension.
+  La fonction peut être vue comme unité de compréhension.
   
   Découper son programme en fonction permet de le diviser en unités compréhensible quand sa taille augmente.
 
   \begin{itemize}
   \item De l'extérieur: on doit pouvoir comprendre ce que fait la fonction sans avoir besoin de lire son code.
-  \item De l'interieur: on doit pouvoir vérifier que la fonction fait ce qu'elle est supposée faire.
+  \item De l'intérieur: on doit pouvoir vérifier que la fonction fait ce qu'elle est supposée faire.
   \end{itemize}
 \end{frame}
 
@@ -331,18 +331,17 @@ Ex: trouver comment lancer le mode interactif en partant de google/qwant/duckduc
   {\em De l'intérieur:}
   \begin{itemize}
   \item Un collègue peut-il vérifier que la fonction est correcte (fait ce qu'elle prétend faire, et rien d'autre).
-  \item Sa taille lui permet elle de tenir sur une fenêtre de taile moyenne ?
-  \item Les noms des variables utilisés sont-il significatifs.
+  \item Sa taille lui permet elle de tenir sur une fenêtre de taille moyenne ?
+  \item Les noms des variables utilisés sont-ils significatifs.
   \item Est ce que je la comprendrai dans 6 mois.
   \end{itemize}
 \end{frame}
 
-\begin{frame}[fragile]\frametitle{Reccursivité}
+\begin{frame}[fragile]\frametitle{Récurissivîté}
   Une fonction peut s'appeler elle même:
   
-  \fbox{\lstinputlisting[firstline=5,lastline=10,language=Python]{../examples/moyenne.py}}
+  \fbox{\lstinputlisting[firstline=3,lastline=7,language=Python]{../examples/facto.py}}
 
-  C'est un choix d'implémentation.
 \end{frame}
 
 \begin{frame}{Saisie utilisateur}
@@ -350,34 +349,149 @@ Ex: trouver comment lancer le mode interactif en partant de google/qwant/duckduc
 
   Exercice:
   \begin{itemize}
-  \item Ecrire une fonction qui retourne {\tt True} ou {\tt False} suivant que l'utilisateur est entré {\tt oui} ou {\tt non}.
+  \item Écrire une fonction qui retourne {\tt True} ou {\tt False} suivant que l'utilisateur est entré {\tt oui} ou {\tt non}.
   \item Autoriser optionnellement les majuscules
   \item Accepter deux listes: les chaînes correspondant à vrai, et celle correspondant à faux.
   \item Accepter un paramètre spécifiant le nombre d'essais autorisés.
   \end{itemize}
 \end{frame}
 
- \begin{frame}{Paramètres par défaut}
-   Exercice: Donner des valeurs par défaut 'raisonnables' pour tout les paramètres sauf le prompt.
- \end{frame}
+\begin{frame}{Paramètres par défaut}
+  Exercice: Donner des valeurs par défaut 'raisonnables' pour tout les paramètres sauf le prompt.
+\end{frame}
 
+\begin{frame}[fragile]{Fonction comme variable}
+  Une fonction est un objet (à peu de choses près) comme un autre.
+  \fbox{\lstinputlisting{../examples/fct1classe.txt}}
+\end{frame}
+
+\begin{frame}[fragile]{Fonction comme argument}
+  Exercices:
+  \begin{itemize}
+  \item Écrire une fonction {\bf appliquer} prenant en argument une liste et une fonction et affichant les images des éléments.
+  \item Écrire une fonction {\bf image} prenant en argument une liste et une fonction et {\em retournant} la liste des images.
+  \item Ecrire une fonction {\bf combiner} prenant en argument deux fonctions à un argument et retournant queslque chose de sensé.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Modules}
+  Constats:
+  \begin{itemize}
+  \item Devoir retaper son code à chaque nouvelle session python est fastidieux.
+  \item Devoir écrire un script sur un seul fichier également, mais ce n'est pas le plus grave.
+    \begin{itemize}
+    \item Cela implique d'avoir plusieurs copies des fonctions/code.
+    \item Tout code doit être maintenu (ou est probablement bon à jeter). \linebreak
+      $doublerightarrow$ N copie $\equiv$ N tâche de maintenance
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Modules}
+  \begin{columns}
+    \column{0.4\textwidth}
+    fibo.py:
+    \newline
+    \fbox{\lstinputlisting[language=Python]{../examples/fac.py}}
+    \column{0.4\textwidth}
+    list\_util.py:
+    \newline
+    \fbox{\lstinputlisting[language=Python]{../examples/list_util.py}}
+  \end{columns}
+  \fbox{\lstinputlisting{../examples/import.log}}
+\end{frame}
+
+\begin{frame}[fragile]{Nommage}
+  
+  Le nommage des entités (fonctions, variables, modules, classe..) est l'un des problèmes les plus sous-estimés par les aspirants développeurs.\linebreak
+  Un ``bon'' nom:
+  \begin{itemize}
+  \item Un nom doit être significatif pour le lecteur (qui doit être identifié).
+  \item Un nom doit être significatif dans le(s) cadre(s) dans lequel il apparaît.
+  \item Pas trop verbeux pour ne pas ennuyer le lecteur.
+  \item Peut s'appuyer sur des abréviations {\em si elles sont largement acceptées par la communauté concernée}.
+  \item Peut s'appuyer sur des conventions.
+  \end{itemize}
+
+  {\em Apprendre à utiliser son éditeur de code est un investissement payant.}
+
+  {\em Le temps passé pour trouver un bon nom n'est pas du tremps perdu.}
+
+  {\em Il faut essayer d'anticiper les usage possible et/ou probables de son code.}
+  
+\end{frame}
+
+\begin{frame}[fragile]{Import}
+  
+  L'utilisation de modules permet de faciliter le travail de nommage.
+  \begin{itemize}
+  \item En aidant à identifier le contexte d'utilisation. Un nom long étant remplacé par plusieurs nom courts.
+  \item En évitant lles conflit sur les noms les plus courant.
+  \item En permettant de renomer une entité lors d'un changement de contexte.
+  \end{itemize}
+  \fbox{\lstinputlisting{../examples/importrename.log}}
+  \fbox{\lstinputlisting{../examples/importall.log}}
+\end{frame}
+
+\begin{frame}[fragile]{Modules ou commande ?}
+  Parfois, la limite entre module et commande n'est pas claire: {\bf facto.py} peut être utilisé à la fois comme module et comme commande:
+
+  Il est possible de se baser sur le {\em nom courant} du module pour distinguer un appel de commande d'une importation de module.
+
+  \fbox{\lstinputlisting[firstline=4]{../examples/mod_name.log}}
+
+  En terme de bonne pratique, il est possible d'utiliser cette fonctionnalité pour effectuer des tests basiques.
+  
+\end{frame}
 
 \begin{frame}{Tuples}
-  Un tuple est un ``paquet'' ordonné et non modifiable de valeurs (éventuellement, d'autres tuples).
-  
-  \center{\fbox{\tt t = 1, 42, 'bob', 3.14 }}
-  
-  Se consulte comme une liste:
-  \center{\fbox{\tt nom = t[2] }}
-  
-  Peut être utilisé pour affecter plusieurs variables:
-  \center{\fbox{\tt nom, age = `Bob', 42 }}
-  
-  Peut être utilisé pour affecter plusieurs variables:
-  \center{\fbox{\tt quotient, reste = divmod(42, 7) }}
-  
-  Peut être mis dans dans des listes:
-  \center{\fbox{\tt student=[('Bob', 15), ('Alice', 16), ('Jane',15) ]}}
+  \begin{itemize}
+  \item Un tuple est un ``paquet'' ordonné et non modifiable de valeurs (éventuellement, d'autres tuples).
+    \newline\fbox{\tt t = 1, 42, 'bob', 3.14 }
+  \item Se consulte comme une liste:
+    \newline\fbox{\tt nom = t[2] }
+  \item  Peut être utilisé pour affecter plusieurs variables:
+    \newline\fbox{\tt nom, age = `Bob', 42 }
+  \item Peut être utilisé pour affecter plusieurs variables:
+    \newline\fbox{\tt quotient, reste = divmod(42, 7) }
+  \item Peut être mis dans dans des listes:
+    \newline\fbox{\tt student=[('Bob', 15), ('Alice', 16), ('Jane',15) ]}
+  \item Déjà utilisés dans la fontion de fibonacci.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Fichier}
+  Les fichiers peuvent se diviser en:
+  \begin{itemize}
+    \item fichiers textes
+      \begin{itemize}
+      \item Codé en ASCII: un chiffre $\equiv$ une lettre.
+      \item Interprêtables sans outils particuliers.
+      \item Peut efficace pour stocker des données.
+      \item Habituellement organisé en lignes.
+      \end{itemize}
+    \item fichiers binaires
+      \begin{itemize}
+      \item Contient des données brutes.
+      \item A généralement besoins d'outils dédier et/ou d'une description formelle.
+      \item Compact et précis.
+      \item Parfois dépendant de la plate-forme.
+      \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{fichiers textes en Python}
+  Exercices:
+  \begin{itemize}
+  \item Trouver la section consacrées au lecture/écriture de fichiers texte dans le tutoriel python.
+  \item Sachant qu'un fichier texte est vu comme une liste de ligne, écrire une programe réaffichant les lignes d'un fichier.
+    \begin{itemize}
+    \item Trouver le type d'une ligne (ou pourra s'aider de la fonction {\tt type}, de l'interprète {\bf python}, des fonctions {\tt readline}, et {\tt open}).
+    \item Chercher le manuel de référence de la librarie standard standard python. Y retrouver la documentation du type {\bf str}.
+    \item Modifier le programme pour suprimer le retour chariot.
+    \item Modifier le programme pour afficher le numero de ligne lors de l'affichage (indice: fonction {\tt enumerate}).
+    \end{itemize}
+  \end{itemize}
 \end{frame}
 
 \end{document}

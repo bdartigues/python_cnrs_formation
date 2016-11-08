@@ -32,30 +32,25 @@ if __name__ == "__main__":
         print(record.id)
         print(repr(record.seq))
         print(len(record))
-        
-        
+ 
     xml_result=get_available_databases()
     dict_record=get_available_databases_as_dict()
-    #print dict_record
-        
-    #record=read_fasta_file(data_dir+fasta_file)
     
+    
+#####SEQ RECORD PART 
     record=get_field_for_pubmed_search()
-#    for field in record:
-#        print("%(Name)s, %(FullName)s, %(Description)s" % field)
-    
     record=search_for_paper("biopython")
-    #print record
-    
     search_for_author_publication()
     gi="186972394"
     get_gb_file(gi)
     get_fasta_file_by_gi(gi)
     gb_record=get_gb_file_record(gi)
-    
     print gb_record
     filename = data_dir+"gi_"+gi+".gbk"
     download_gb_file_record(filename)
+    
+    ###EGQUERY PART
+    
     global_search("potyvirus")
     
     #get_all_genes()

@@ -484,7 +484,7 @@ Ex: trouver comment lancer le mode interactif en partant de google/qwant/duckduc
   Exercices:
   \begin{itemize}
   \item Trouver la section consacrées au lecture/écriture de fichiers texte dans le tutoriel python.
-  \item Sachant qu'un fichier texte est vu comme une liste de ligne, écrire une programe réaffichant les lignes d'un fichier.
+  \item Sachant qu'un fichier texte est vu comme une liste de ligne, écrire une programe réaffichant les lignes d'un fichier dont le nom est fourni en argument.
     \begin{itemize}
     \item Trouver le type d'une ligne (ou pourra s'aider de la fonction {\tt type}, de l'interprète {\bf python}, des fonctions {\tt readline}, et {\tt open}).
     \item Chercher le manuel de référence de la librarie standard standard python. Y retrouver la documentation du type {\bf str}.
@@ -531,16 +531,43 @@ Ex: trouver comment lancer le mode interactif en partant de google/qwant/duckduc
   \end{itemize}
 \end{frame}
 
+\begin{frame}[fragile]\frametitle{GitHub}
+  
+  Exercice:
+  \begin{itemize}
+  \item Créez vous un compte sur \url{https://www.github.com}
+  \item Créer un projet {\bf test}.
+  \item Il va falloir indiquer à github quels sont les comptes (couple machine/login) qui vous sont associés. Cela peut ce faire par {\em échange de clefs ssh}. 
+    \begin{itemize}
+    \item Trouver la documentation associée sur la page d'acceuil.
+    \item Quelles sont les précaution à prendre avant de générer un couple de clefs?
+    \item Mettre en œuvre et tester.
+    \end{itemize}
+  \end{itemize}
+\end{frame}
 
 \begin{frame}[fragile]\frametitle{Git et remote}
   Exercices: 
   \begin{itemize}
-  \item Cloner le dépôt {\bf biopyt}
+  \item Cloner le dépôt de la formation.
   \item Utiliser la commande {\tt git remote -v} et assurez vous que vous êtes bien sur la branche {\bf master}.
-  \item Dans le fichier {\tt examples/users/users.txt}, ajouter une ligne en respectant le format utilisé.
+  \item Dans le fichier {\tt intro/examples/users/users.txt}, ajouter une ligne en respectant le format utilisé.
   \item À l'aide de la commande {\tt git push ...} intégrez votre modification sur le dépôt d'origine. Attention, suivant l'ordre dans lequel vous arrivez, les chose seront plus ou moins simples (mais toujours gérable).
   \end{itemize}
 \end{frame}
 
+\begin{frame}\frametitle{Aliasing}
+  En Python, il existe deux type de type: les non modifiables (entier, chaines, tuples) et les modifiable (listes, dictionnaires, et à peut prêt tout le reste.
+  
+  Exercice: 
+  \begin{itemize}
+  \item Ecrire un fonction modifiant l'entier qui lui est passé en argument et vérifier sa valeur une fois sa fonction exécutée.
+  \item Essayer avec d'autre types.
+  \item Avec des tuples.
+  \end{itemize}
+\end{frame}
 
+\begin{frame}\frametitle{Classes}
+  A partir du chapitre sur les classes du tutoriel, déterminer à quoi ressemblerait une classe {\nf Person}
+\end{frame}
 \end{document}

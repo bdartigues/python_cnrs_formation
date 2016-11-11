@@ -22,6 +22,10 @@ def count_letter_in_sequence(seq,letter):
 def get_gc_content(seq):
     return GC(seq)
 
+def get_gc_values(seq_record):
+    gc_values = sorted(GC(rec.seq) for rec in seq_record)
+    return gc_values
+
 def slice_sequence(seq,start,end):
     #return a seq object
     return seq[start:end]

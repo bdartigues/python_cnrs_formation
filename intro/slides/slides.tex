@@ -540,7 +540,7 @@ Ex: trouver comment lancer le mode interactif en partant de google/qwant/duckduc
   \item Il va falloir indiquer à github quels sont les comptes (couple machine/login) qui vous sont associés. Cela peut ce faire par {\em échange de clefs ssh}. 
     \begin{itemize}
     \item Trouver la documentation associée sur la page d'acceuil.
-    \item Quelles sont les précaution à prendre avant de générer un couple de clefs?
+    \item Quelles sont les précautions à prendre avant de générer un couple de clefs?
     \item Mettre en œuvre et tester.
     \end{itemize}
   \end{itemize}
@@ -549,10 +549,64 @@ Ex: trouver comment lancer le mode interactif en partant de google/qwant/duckduc
 \begin{frame}[fragile]\frametitle{Git et remote}
   Exercices: 
   \begin{itemize}
-  \item Cloner le dépôt de la formation.
+  \item Cloner le dépôt de la formation \url{https://github.com/bdartigues/python_cnrs_formation}.
   \item Utiliser la commande {\tt git remote -v} et assurez vous que vous êtes bien sur la branche {\bf master}.
   \item Dans le fichier {\tt intro/examples/users/users.txt}, ajouter une ligne en respectant le format utilisé.
-  \item À l'aide de la commande {\tt git push ...} intégrez votre modification sur le dépôt d'origine. Attention, suivant l'ordre dans lequel vous arrivez, les chose seront plus ou moins simples (mais toujours gérable).
+  \item S'intéroger sur les cause de dysfonctionement.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{GitHub et les Fork}
+  Vous pouvez dupliquer n'importe quel projet public sur votre espace GitHub.
+  
+  Cela vous permet de travailler sur vo propres modifications sans impacter le projet ``original''.
+
+  Exercice:
+  \begin{itemize}
+  \item Faire un fork de \url{https://github.com/bdartigues/python_cnrs_formation}
+  \item Que dit la commande {\tt git remote -v}
+  \item Le cloner sur son espace et répéter les modifications.
+  \item Utiliser la commande {\tt git push}.
+  \item Constater la mdification via l'interface web de GitHub.
+  \item Ajouter un remote {\bf main} corespondant à \url{https://github.com/bdartigues/python_cnrs_formation}.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{GitHub et Pull Request}
+  Sans accès ``collaborateur'' au projet original, vos contrinution se font via des {\em Pull Request} : vous aller proposer votre modification au projet principal, qui poura l'accepter, ou pas, ou discuter avec vous de sa pertinence.
+
+  Execice:
+  \begin{itemize}
+  \item Proposez, via une pull request, votre modification au c=projet original via l'interface web de GitHub.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{Collaborateur GitHub}
+  Le modèle Pull Request peut poser un problème de scalabilité lorsque le nombre d'intervenant est grand: Un seul ``propriétaire'' doit gérer toutes les évaluations de Pull Request.
+  
+  Ajouter un collaborateur permet de répartir la charge et d'être plus réactif.
+
+  Exercice:
+  \begin{itemize} 
+    \item Par binome, choisir un dépôt principal, et ajouter votre binome en collaborateur.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{Modle de developpement}
+  Un modèle de développement courant sur un projet public GitHub:
+  \begin{itemize}
+  \item Sur le dépôt principal:
+    \begin{itemize}
+    \item Un ``noyau dur'' de développeurs de confiance.
+    \item Deux branches principales:
+      \begin{itemize}
+      \item {\bf master} branche dont l'on tire les releaze, très surveillée et modifiée avec précaution.
+      \item {\bf develop} branche courante de développement, sur laquelle tout le monde se synchronize régulièrement. On y commite les ``petites'' modification ou les traveaux finalisés. 
+        Mergée sur {\bf master} après vérifications soignées.
+      \item plusieurs {\bf branches de travail} ou l'on dévelope une fonctionnalité sans perturber {\bf develop}, que l'on merge régulièrement.
+      \end{itemize}
+    \end{itemize}
+  \item Par ailleurs, sur les dépôts forkés, n'importe qui pouroa contribuer via des pull request.
   \end{itemize}
 \end{frame}
 
@@ -567,7 +621,41 @@ Ex: trouver comment lancer le mode interactif en partant de google/qwant/duckduc
   \end{itemize}
 \end{frame}
 
-\begin{frame}\frametitle{Classes}
-  A partir du chapitre sur les classes du tutoriel, déterminer à quoi ressemblerait une classe {\nf Person}
+\begin{frame}\frametitle{Tri}
+  Exercices:
+  \begin{itemize}
+  \item Ecrire un programme qui lise le fichier {\bf users.txt} et affiche les utilisateur listés avec le prénom avant le nom de famille. Passer par des tuples peut aider.
+  \item Modifier le programme pour que chaque utilisateur soit préfixé de son numero de ligne.
+  \end{itemize}
 \end{frame}
+
+\begin{frame}\frametitle{Classes}
+  A partir du chapitre sur les classes du tutoriel, déterminer à quoi ressemblerait une classe {\bf Person}. 
+  \begin{itemize}
+  \item Sachant que l'on s'intéresse à ses noms, prénoms, dates de naissance et description.
+  \item Que l'on veut pouvoir initializer une instance de {\bf Personne} avec ses 4 informations.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{argparse}
+  Exercice:
+  \begin{itemize}
+  \item Aller regarder dans la documentation de la librairie standard de Python, plus précisement dans le chapitre {\bf Generic Operating System Services}. Nous cherchons quelque chose pour lire des arguments de la ligne de commande.
+  \item Modifier le programe précédent pour qu'il prennent deux argument, {\bf -i} et {\bf -o} permétant de préciser respectivement le fichier d'entrée et le fichier de sortie. 
+  \end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{Tri}
+  Exercice:
+  \begin{itemize}
+  \item Pour chaque binome, choisir un dépôt. S'assure de l'existance d'une branche {\bf develop}.
+  \item L'un va afficher la liste triée par nom, l'autre par date, en conditionnant cette action par une option {\bf --byname} ou {\bf --byage} respectivement. Le travail sera effectué sur une branche spécifique à créer.
+  \item Repercuter les changement sur {\bf develop}.
+  \item détruire les branches.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{Exceptions}
+\end{frame}
+
 \end{document}

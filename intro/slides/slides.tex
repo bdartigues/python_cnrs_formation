@@ -6,9 +6,9 @@
 
 \usetheme{Warsaw}
 
-\title{Programmer en Python}
-\author{A. Miniussi}
-\institute{Observatoire de la Côte d'Azur}
+\title{Programmer en Python,\\ une introduction}
+%\author{A. Miniussi}
+%\institute{Observatoire de la Côte d'Azur}
 
 \begin{document}
 
@@ -370,7 +370,7 @@ Ex: trouver comment lancer le mode interactif en partant de google/qwant/duckduc
   \begin{itemize}
   \item Écrire une fonction {\bf appliquer} prenant en argument une liste et une fonction et affichant les images des éléments.
   \item Écrire une fonction {\bf image} prenant en argument une liste et une fonction et {\em retournant} la liste des images.
-  \item Ecrire une fonction {\bf combiner} prenant en argument deux fonctions à un argument et retournant queslque chose de sensé.
+  \item Écrire une fonction {\bf combiner} prenant en argument deux fonctions à un argument et retournant quelque chose de sensé.
   \end{itemize}
 \end{frame}
 
@@ -415,7 +415,7 @@ Ex: trouver comment lancer le mode interactif en partant de google/qwant/duckduc
 
   {\em Apprendre à utiliser son éditeur de code est un investissement payant.}
 
-  {\em Le temps passé pour trouver un bon nom n'est pas du tremps perdu.}
+  {\em Le temps passé pour trouver un bon nom n'est pas du temps perdu.}
 
   {\em Il faut essayer d'anticiper les usage possible et/ou probables de son code.}
   
@@ -426,8 +426,8 @@ Ex: trouver comment lancer le mode interactif en partant de google/qwant/duckduc
   L'utilisation de modules permet de faciliter le travail de nommage.
   \begin{itemize}
   \item En aidant à identifier le contexte d'utilisation. Un nom long étant remplacé par plusieurs nom courts.
-  \item En évitant lles conflit sur les noms les plus courant.
-  \item En permettant de renomer une entité lors d'un changement de contexte.
+  \item En évitant les conflits sur les noms les plus courants.
+  \item En permettant de renommer une entité lors d'un changement de contexte.
   \end{itemize}
   \fbox{\lstinputlisting{../examples/importrename.log}}
   \fbox{\lstinputlisting{../examples/importall.log}}
@@ -456,7 +456,7 @@ Ex: trouver comment lancer le mode interactif en partant de google/qwant/duckduc
     \newline\fbox{\tt quotient, reste = divmod(42, 7) }
   \item Peut être mis dans dans des listes:
     \newline\fbox{\tt student=[('Bob', 15), ('Alice', 16), ('Jane',15) ]}
-  \item Déjà utilisés dans la fontion de fibonacci.
+  \item Déjà utilisés dans la fonction de fibonacci.
   \end{itemize}
 \end{frame}
 
@@ -466,7 +466,7 @@ Ex: trouver comment lancer le mode interactif en partant de google/qwant/duckduc
     \item fichiers textes
       \begin{itemize}
       \item Codé en ASCII: un chiffre $\equiv$ une lettre.
-      \item Interprêtables sans outils particuliers.
+      \item Interprétables sans outils particuliers.
       \item Peut efficace pour stocker des données.
       \item Habituellement organisé en lignes.
       \end{itemize}
@@ -484,12 +484,12 @@ Ex: trouver comment lancer le mode interactif en partant de google/qwant/duckduc
   Exercices:
   \begin{itemize}
   \item Trouver la section consacrées au lecture/écriture de fichiers texte dans le tutoriel python.
-  \item Sachant qu'un fichier texte est vu comme une liste de ligne, écrire une programe réaffichant les lignes d'un fichier dont le nom est fourni en argument.
+  \item Sachant qu'un fichier texte est vu comme une liste de ligne, écrire une programme réaffichant les lignes d'un fichier dont le nom est fourni en argument.
     \begin{itemize}
     \item Trouver le type d'une ligne (ou pourra s'aider de la fonction {\tt type}, de l'interprète {\bf python}, des fonctions {\tt readline}, et {\tt open}).
-    \item Chercher le manuel de référence de la librarie standard standard python. Y retrouver la documentation du type {\bf str}.
-    \item Modifier le programme pour suprimer le retour chariot.
-    \item Modifier le programme pour afficher le numero de ligne lors de l'affichage (indice: fonction {\tt enumerate}).
+    \item Chercher le manuel de référence de la librairie standard standard python. Y retrouver la documentation du type {\bf str}.
+    \item Modifier le programme pour supprimer le retour chariot.
+    \item Modifier le programme pour afficher le numéro de ligne lors de l'affichage (indice: fonction {\tt enumerate}).
     \end{itemize}
   \end{itemize}
 \end{frame}
@@ -498,11 +498,11 @@ Ex: trouver comment lancer le mode interactif en partant de google/qwant/duckduc
   \begin{itemize}
   \item Git permet non seulement de versionner, mais aussi de collaborer, y compris avec soi.
   \item Votre dépôt peut héberger autant de {\em versions} différentes de votre code que vous le souhaitez.
-  \item Les branche vont nous permètre de:
+  \item Les branche vont nous permettre de:
     \begin{itemize}
-    \item Faire des essais sans comprometre votre code.
-    \item De travailler sur différentes fonctionnalités en parallele.
-    \item De controler les integrations de ces fonctionnalités dans votre code {``principal''}.
+    \item Faire des essais sans compromettre votre code.
+    \item De travailler sur différentes fonctionnalités en parallèle.
+    \item De contrôler les intégrations de ces fonctionnalités dans votre code {``principal''}.
     \end{itemize}
   \end{itemize}
 \end{frame}
@@ -510,12 +510,12 @@ Ex: trouver comment lancer le mode interactif en partant de google/qwant/duckduc
 \begin{frame}[fragile]\frametitle{Git et les branches}
   Exercices:
   \begin{itemize}
-  \item Créer un nouveau dépot avec {\tt git init}
+  \item Créer un nouveau dépôt avec {\tt git init}
   \item Y ajouter le script python {\bf facto.py}, l'intégrer, commiter, taper {\tt git branch -v}
   \item Créer une nouvelle branche nommée {\bf develop}, qu'observe t'on ?
-  \item Ajouter un fichier {\bf README}, controlé par git, et modifier le script.
+  \item Ajouter un fichier {\bf README}, contrôle par git, et modifier le script.
   \item Observer les différences entre les branches {\bf develop} et {\bf master}.
-  \item Sur la branche {\bf master}, modifier, différement, le script {\bf facto.py}.
+  \item Sur la branche {\bf master}, modifier, différemment, le script {\bf facto.py}.
   \item Intégrer les modification de la branche {\bf develop} dans la branche {\bf master}.
   \item Intégrer les modification de la branche {\bf master} dans la branche {\bf develop}.
   \end{itemize}
@@ -524,10 +524,10 @@ Ex: trouver comment lancer le mode interactif en partant de google/qwant/duckduc
 \begin{frame}[fragile]\frametitle{Git et remote}
   Git est (aussi) un système de versionnage {\em distribué}.
   \begin{itemize}
-    \item De même qu'il est possible de ``synchronizer'' des branches entre elles, il est possible de synchronizer des dépôts.
+    \item De même qu'il est possible de ``synchroniser'' des branches entre elles, il est possible de synchroniser des dépôts.
     \item Même si cela n'a rien d'obligatoire, on décide souvent de donner à l'un de ses dépôt un rôle de dépôt de référence. Les dépôt sont généralement organisés en arbres de profondeur 1 dont le dépôt de référence est la racine.
     \item Sans discipline, la situation devient rapidement ingérable.
-    \item Plusieurs platformes proposent des service d'hébergement de dépôt git: \url{https://github.com}, \url{https://about.gitlab.com}...
+    \item Plusieurs plateformes proposent des service d'hébergement de dépôt git: \url{https://github.com}, \url{https://about.gitlab.com}...
   \end{itemize}
 \end{frame}
 
@@ -539,7 +539,7 @@ Ex: trouver comment lancer le mode interactif en partant de google/qwant/duckduc
   \item Créer un projet {\bf test}.
   \item Il va falloir indiquer à github quels sont les comptes (couple machine/login) qui vous sont associés. Cela peut ce faire par {\em échange de clefs ssh}. 
     \begin{itemize}
-    \item Trouver la documentation associée sur la page d'acceuil.
+    \item Trouver la documentation associée sur la page d'accueils.
     \item Quelles sont les précautions à prendre avant de générer un couple de clefs?
     \item Mettre en œuvre et tester.
     \end{itemize}
@@ -552,14 +552,14 @@ Ex: trouver comment lancer le mode interactif en partant de google/qwant/duckduc
   \item Cloner le dépôt de la formation \url{https://github.com/bdartigues/python_cnrs_formation}.
   \item Utiliser la commande {\tt git remote -v} et assurez vous que vous êtes bien sur la branche {\bf master}.
   \item Dans le fichier {\tt intro/examples/users/users.txt}, ajouter une ligne en respectant le format utilisé.
-  \item S'intéroger sur les cause de dysfonctionement.
+  \item S'interroger sur les causes de dysfonctionnement.
   \end{itemize}
 \end{frame}
 
 \begin{frame}{GitHub et les Fork}
   Vous pouvez dupliquer n'importe quel projet public sur votre espace GitHub.
   
-  Cela vous permet de travailler sur vo propres modifications sans impacter le projet ``original''.
+  Cela vous permet de travailler sur vos propres modifications sans impacter le projet ``original''.
 
   Exercice:
   \begin{itemize}
@@ -567,17 +567,17 @@ Ex: trouver comment lancer le mode interactif en partant de google/qwant/duckduc
   \item Que dit la commande {\tt git remote -v}
   \item Le cloner sur son espace et répéter les modifications.
   \item Utiliser la commande {\tt git push}.
-  \item Constater la mdification via l'interface web de GitHub.
-  \item Ajouter un remote {\bf main} corespondant à \url{https://github.com/bdartigues/python_cnrs_formation}.
+  \item Constater la modification via l'interface web de GitHub.
+  \item Ajouter un remote {\bf main} correspondant à \url{https://github.com/bdartigues/python_cnrs_formation}.
   \end{itemize}
 \end{frame}
 
 \begin{frame}\frametitle{GitHub et Pull Request}
-  Sans accès ``collaborateur'' au projet original, vos contrinution se font via des {\em Pull Request} : vous aller proposer votre modification au projet principal, qui poura l'accepter, ou pas, ou discuter avec vous de sa pertinence.
+  Sans accès ``collaborateur'' au projet original, vos contributions se font via des {\em Pull Request} : vous aller proposer votre modification au projet principal, qui pourra l'accepter, ou pas, ou discuter avec vous de sa pertinence.
 
-  Execice:
+  Exercice:
   \begin{itemize}
-  \item Proposez, via une pull request, votre modification au c=projet original via l'interface web de GitHub.
+  \item Proposez, via une pull request, votre modification au projet original via l'interface web de GitHub.
   \end{itemize}
 \end{frame}
 
@@ -588,11 +588,11 @@ Ex: trouver comment lancer le mode interactif en partant de google/qwant/duckduc
 
   Exercice:
   \begin{itemize} 
-    \item Par binome, choisir un dépôt principal, et ajouter votre binome en collaborateur.
+    \item Par binôme, choisir un dépôt principal, et ajouter votre binôme en collaborateur.
   \end{itemize}
 \end{frame}
 
-\begin{frame}\frametitle{Modle de developpement}
+\begin{frame}\frametitle{Mode de développement}
   Un modèle de développement courant sur un projet public GitHub:
   \begin{itemize}
   \item Sur le dépôt principal:
@@ -600,22 +600,22 @@ Ex: trouver comment lancer le mode interactif en partant de google/qwant/duckduc
     \item Un ``noyau dur'' de développeurs de confiance.
     \item Deux branches principales:
       \begin{itemize}
-      \item {\bf master} branche dont l'on tire les releaze, très surveillée et modifiée avec précaution.
-      \item {\bf develop} branche courante de développement, sur laquelle tout le monde se synchronize régulièrement. On y commite les ``petites'' modification ou les traveaux finalisés. 
+      \item {\bf master} branche dont l'on tire les release, très surveillée et modifiée avec précaution.
+      \item {\bf develop} branche courante de développement, sur laquelle tout le monde se synchronize régulièrement. On y commite les ``petites'' modification ou les travaux finalisés. 
         Mergée sur {\bf master} après vérifications soignées.
-      \item plusieurs {\bf branches de travail} ou l'on dévelope une fonctionnalité sans perturber {\bf develop}, que l'on merge régulièrement.
+      \item plusieurs {\bf branches de travail} ou l'on développe une fonctionnalité sans perturber {\bf develop}, que l'on merge régulièrement.
       \end{itemize}
     \end{itemize}
-  \item Par ailleurs, sur les dépôts forkés, n'importe qui pouroa contribuer via des pull request.
+  \item Par ailleurs, sur les dépôts forkés, n'importe qui pourra contribuer via des pull request.
   \end{itemize}
 \end{frame}
 
 \begin{frame}\frametitle{Aliasing}
-  En Python, il existe deux type de type: les non modifiables (entier, chaines, tuples) et les modifiable (listes, dictionnaires, et à peut prêt tout le reste.
+  En Python, il existe deux type de type: les non modifiables (entier, chaînes, tuples) et les modifiable (listes, dictionnaires, et à peut prêt tout le reste.
   
   Exercice: 
   \begin{itemize}
-  \item Ecrire un fonction modifiant l'entier qui lui est passé en argument et vérifier sa valeur une fois sa fonction exécutée.
+  \item Écrire un fonction modifiant l'entier qui lui est passé en argument et vérifier sa valeur une fois sa fonction exécutée.
   \item Essayer avec d'autre types.
   \item Avec des tuples.
   \end{itemize}
@@ -624,8 +624,8 @@ Ex: trouver comment lancer le mode interactif en partant de google/qwant/duckduc
 \begin{frame}\frametitle{Tri}
   Exercices:
   \begin{itemize}
-  \item Ecrire un programme qui lise le fichier {\bf users.txt} et affiche les utilisateur listés avec le prénom avant le nom de famille. Passer par des tuples peut aider.
-  \item Modifier le programme pour que chaque utilisateur soit préfixé de son numero de ligne.
+  \item Écrire un programme qui lise le fichier {\bf users.txt} et affiche les utilisateur listés avec le prénom avant le nom de famille. Passer par des tuples peut aider.
+  \item Modifier le programme pour que chaque utilisateur soit préfixé de son numéro de ligne.
   \end{itemize}
 \end{frame}
 
@@ -633,24 +633,24 @@ Ex: trouver comment lancer le mode interactif en partant de google/qwant/duckduc
   A partir du chapitre sur les classes du tutoriel, déterminer à quoi ressemblerait une classe {\bf Person}. 
   \begin{itemize}
   \item Sachant que l'on s'intéresse à ses noms, prénoms, dates de naissance et description.
-  \item Que l'on veut pouvoir initializer une instance de {\bf Personne} avec ses 4 informations.
+  \item Que l'on veut pouvoir initialiser une instance de {\bf Personne} avec ses 4 informations.
   \end{itemize}
 \end{frame}
 
 \begin{frame}\frametitle{argparse}
   Exercice:
   \begin{itemize}
-  \item Aller regarder dans la documentation de la librairie standard de Python, plus précisement dans le chapitre {\bf Generic Operating System Services}. Nous cherchons quelque chose pour lire des arguments de la ligne de commande.
-  \item Modifier le programe précédent pour qu'il prennent deux argument, {\bf -i} et {\bf -o} permétant de préciser respectivement le fichier d'entrée et le fichier de sortie. 
+  \item Aller regarder dans la documentation de la librairie standard de Python, plus précisément dans le chapitre {\bf Generic Operating System Services}. Nous cherchons quelque chose pour lire des arguments de la ligne de commande.
+  \item Modifier le programme précédent pour qu'il prennent deux argument, {\bf -i} et {\bf -o} permettant de préciser respectivement le fichier d'entrée et le fichier de sortie. 
   \end{itemize}
 \end{frame}
 
 \begin{frame}\frametitle{Tri}
   Exercice:
   \begin{itemize}
-  \item Pour chaque binome, choisir un dépôt. S'assure de l'existance d'une branche {\bf develop}.
+  \item Pour chaque binôme, choisir un dépôt. S'assure de l'existence d'une branche {\bf develop}.
   \item L'un va afficher la liste triée par nom, l'autre par date, en conditionnant cette action par une option {\bf --byname} ou {\bf --byage} respectivement. Le travail sera effectué sur une branche spécifique à créer.
-  \item Repercuter les changement sur {\bf develop}.
+  \item Répercuter les changement sur {\bf develop}.
   \item détruire les branches.
   \end{itemize}
 \end{frame}

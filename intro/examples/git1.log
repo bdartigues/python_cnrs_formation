@@ -1,0 +1,12 @@
+$ mkdir biopyt
+$ cd biopyt
+$ git init
+$ git status
+$ cp ... ./fibo.py
+$ git status
+$ git add fibo.py 
+$ git status
+$ git commit
+$ git status
+$ git log
+$ 

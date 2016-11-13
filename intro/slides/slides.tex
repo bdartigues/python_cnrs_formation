@@ -1,0 +1,661 @@
+\documentclass{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+\usepackage{verbatim}
+\usepackage{listings}
+
+\usetheme{Warsaw}
+
+\title{Programmer en Python}
+\author{A. Miniussi}
+\institute{Observatoire de la Côte d'Azur}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}{Objectifs}
+  Être capables de développer et de maintenir de façon collaborative une application d'analyse de données biologique Python.
+  
+  \begin{itemize}
+  \item Introduction au langage Python.
+  \item Principes de programmation.
+  \item Développement collaboratif.
+  \item Application à la bio\-informatique. 
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Prérequis}
+  Aucun prérequis en matière de programmation.
+  
+  \begin{itemize}
+  \item Être capable de survivre sous Linux en mode ligne de commande.
+  \item Savoir utiliser un éditeur de texte.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{À savoir}
+  \begin{itemize}
+  \item Très peu de slides: Python et GIT disposent de beaucoup de ressources (pédagogiques, références) auxquelles nous renverrons autant que possible.
+  \item Basé sur l'exemple et les travaux pratique: il faudra coder, écrire, collaborer.
+  \item Non exhaustif.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Python Origin's}
+  Crée à la fin des années 80 par {\em Guido Van Rossum pour}, pour faire autre chose, pendant ses vacances de Noël.
+  \begin{itemize}
+  \item Initié aux Pays-Bas dans le cadre du projet Amobea (mort en 1996)...
+  \item ..puis au CNRI, puis à BeOpen, puis à la Python Software Foundation.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Des raisons du succès}
+  Initié comme langage de script, Python promeut favorise avant tout la facilité et le confort d'utilisation.
+  \begin{itemize}
+  \item La plupart des librairies ``connues'' possède une interface Python.
+  \item Il est facile de ``bricoler'' un script qui vous passe par la tête.
+  \item Le langage offre {\em une} façon, facile à retenir, de faire les choses.
+  \item La documentation fait très souvent référence au \href{https://en.wikipedia.org/wiki/Monty_Python\%27s_Flying_Circus}{Monty Python's Flying Circus}.
+  \item ...
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{les inconvénients}
+  Dépendent de vos attentes.
+  \begin{itemize}
+  \item Fait peu de de cas de la compatibilité ascendante $\rightarrow$ portabilité déplorable.
+  \item Ne se considère pas responsable des performances d'exécution...
+    \begin{itemize}
+    \item qui sont rarement critiques,
+    \item et souvent plus subtiles que prévues. 
+    \end{itemize}
+  \item Promeut parfois l'idée que développer est une activité facile.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Gestion de version}
+  Si un code n'est pas appelé à évoluer, il ne mérite probablement pas d'être écrit.
+  \begin{itemize}
+  \item {\bf Versionnage}: Besoin de garder un trace de son travail.
+  \item {\bf Travail collaboratif}: Besoin de travailler ensembles sans se marcher sur les pieds.
+  \end{itemize}
+  Les outils aident (beaucoup), mais ne dispensent pas de méthodologie.
+\end{frame}
+
+\begin{frame}{GIT}
+  Un ``stupide pisteur de contenu'' initialement créé par Linus Torvalds, rendu utilisable par de fidèles disciples.\linebreak
+  Peut signifier, selon l'humeur:
+  \begin{itemize}
+  \item Un ATL prononçable, libre, que l'on peut prononcer incorrectement ``get'', ce qui peut avoir un sens. Ou pas.
+  \item En argot anglais, peut signifier odieux, stupide, méprisable, simplet... quelque chose de clairement péjoratif.
+  \item {\bf{G}}lobal {\bf{I}}nformation {\bf{T}}racker, quand tout va bien.
+  \item {\bf{G}}oddamn {\bf{I}}diotic {\bf{T}}ruckload of sh*t, quand tout va moins bien.
+  \end{itemize}
+  ``I'm an egotistical bastard, and I name all my projects after myself. First 'Linux', now 'git'.''
+\end{frame}
+
+\begin{frame}{Pourquoi GIT?}
+  Parce que!
+  \begin{itemize}
+  \item Décentralisé, ce qui peut être déroutant pour les non-initiés.
+  \item Rapide, ce qui peut être utile pour les gros projets.
+  \item Assez complexe, ce qui peut être frustrant pour des configuration simple.
+  \item Réputé ne pas se mettre en travers de la route.
+  \item Peut s'interfacer avec d'autres systèmes.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Autour de GIT}
+  GIT supporte plusieurs modèles de développement, et offre parfois des outils associés.
+  \begin{itemize}
+  \item Le {\em modèle dictatorial} (exemple: Linux), modèle pyramidal où chaque membre fait confiance à un nombre restreint de sous-fifres.
+  \item Le modèle collaboratif, à base de ``pull requests'', mis en œuvre par GITHub notamment.
+  \item Le modèle ``moi et mon laptop''.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{L'interprète}
+(ou {\em interpréteur} en franglais)
+
+La {\em commande} {\bf python} permet d'interpréter du {\em code} {\bf Python}, au même titre que la commande {\bf perl} permet d'exécuter du code {\bf Perl} etc.. 
+\note{Lancer la commande, regarder la version, comment sortir, trouver sur le web comment sortir).
+
+On parle alors de mode {\em interactif}.
+
+On peut s'en servir pour effectuer des essais, ou comme calculateur.
+
+Ex: trouver comment lancer le mode interactif en partant de google/qwant/duckduckgo etc..  pour arriver sur la partie tutoriel Python-2.7 (\url{https://docs.python.org/2.7/tutorial/index.html}})
+
+\note{Import this}
+
+\end{frame}
+
+\begin{frame}{Quelques types de base}
+
+  Python propose les types de base usuels, même si ce n'est pas un langage de numéricien.
+  \begin{itemize}
+  \item Un type flottant, un type entier...
+  \item ... définis comme étant le type ``naturel'' de la machine.
+  \item Supporte les 4 opération de base, les exposant, le parenthésage..
+  \end{itemize}
+  Exercices:
+  \begin{itemize}
+  \item Évaluer des expressions, mélanger les types.
+  \item Types complexes ?
+  \item Diviser par zéro.
+  \item Afficher $0.1$, l'ajouter à $0.2$
+  \item Utiliser des variables à la place des littéraux
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]\frametitle{Chaînes de caractères}
+  \begin{itemize}
+  \item Séquence de caractères entres {\verb|'simple quotte'|} ou {\verb|"double quottes"|}
+  \item Peuvent être affichées avec {\verb|print|}.
+  \item On peut afficher de longues chaînes sur plusieurs ligne, ou mettre des retour à la ligne dans une chaîne.
+  \end{itemize}
+  \note{tester, observer le rôle de print}
+  \note{essayer les accents}
+  Exercices:
+  \begin{itemize}
+  \item Expliquer \verb|machin[1:3]|
+  \item Utiliser les opérateurs + et * avec des chaînes et des entiers.
+    \note{index négatifs}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]\frametitle{Listes}
+  La structure de donnée reine de Python.
+  \begin{itemize}
+  \item \verb|[3, 5, 7, 11, 13, 17]|
+  \item \verb|['banana', 'grapefruit', 'strawberry', 'lemon']|
+  \item \verb|[3, 'banana', 5, 3.14 ]|
+  \item \verb|[[3, 4, 5], ['strawberry', 'lemon']]|
+  \end{itemize}
+  Exercice:
+  \begin{itemize}
+  \item ``Additionner'' deux liste
+  \item Extraire des sous listes.
+  \item Remplacer un élément.
+  \item Remplacer une sous-liste.
+  \item Obtenir la longueur d'un liste.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]\frametitle{Conditions}
+  Un algorithme doit faire des choix.
+  
+  \lstinputlisting[language=Python, firstline=2]{../examples/terre_plate1.py}
+
+  Pour cela on a besoin d'un notion de vrai et de faux représentées en programmation par la notion d'expression booléenne.
+  \begin{itemize}
+    \item Une expression booléenne peut avoir deux valeur: \verb|True| et \verb|False|.
+    \item Résultat d'une comparaison (\verb|>, <, ==, !=, >=, <=|)
+    \item ... ou d'une conversion (nombres, liste etc..), éventuellement explicite: {\bf bool(}\verb|<expr>|{\bf{)}}.
+  \end{itemize}
+  Exercice: tester des expressions: entiers, réels, liste...
+\end{frame}
+
+\begin{frame}[fragile]\frametitle{Premières boucles}
+  \center{\fbox{\lstinputlisting[language=Python]{../examples/nfirst.py}}}
+  
+  Exercices:
+  \begin{itemize}
+  \item Écrire les 10 premiers cubes.
+  \item Écrire les premiers éléments de la suite de Fibonacci.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]\frametitle{Premier programme}
+  \begin{columns}
+    \column{0.4\textwidth}
+    Dans le fichier {\it fibo.py}:\newline
+    \fbox{\lstinputlisting[language=Python]{../examples/fibo1.py}}
+    \column{0.4\textwidth}
+    À exécuter avec:
+    \fbox{\lstinputlisting{../examples/fibo1.txt}}
+  \end{columns}
+\end{frame}
+
+\begin{frame}[fragile]\frametitle{Premier programme autonome}
+  On souhaite exécuter le programme directement:
+  \begin{itemize}
+  \item Il doit être exécutable.
+  \end{itemize}
+  \fbox{\lstinputlisting{../examples/fibo2_1.txt}}
+\end{frame}
+
+\begin{frame}[fragile]\frametitle{Premier programme autonome}
+  Il faut également préciser comment il doit être exécuté:
+  \fbox{\lstinputlisting{../examples/fibo2_2.txt}}
+
+  On préférera la ligne \href{https://en.wikipedia.org/wiki/Shebang_(Unix)}{shebang} suivante:
+\begin{verbatim}
+!#/usr/bin/env python
+\end{verbatim}
+\end{frame}
+
+\begin{frame}{Arguments}
+  On souhaite pouvoir préciser combien de nombre de Fibonacci le programme affichera.
+
+  Exercice: Retrouver la documentation concernant l'invocation de l'interprète, un indice s'y trouve peut-être.
+  
+  Exercice: Modifier le programme pour que l'on puisse lui transmettre ce nombre. 
+\end{frame}
+
+\begin{frame}{GIT, phase d'approche}
+  Une première utilisation, minimaliste, de {\bf git} consiste à s'en servir de versionnage local.
+  \begin{itemize}
+  \item On empile les versions, mais sans avoir à gérer une pléthore de copies.
+  \item en cas de problèmes, on peut retrouver n'importe quelle version.
+  \end{itemize}
+  Documentations:
+  \begin{itemize}
+  \item Sur le web: \url{https://git-scm.com/doc}
+  \item En ligne de commande: {\tt git help}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Premier dépôt}
+  Exercice: créer un dépôt local pour gérer l'évolution des codes développés pendant la formation.
+  \begin{itemize}
+  \item {\tt git help init}
+  \item {\tt git help add}
+  \item {\tt git help commit}
+  \item {\tt git help checkout}
+  \item {\tt git help status}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Test, Arguments}
+  
+  Exercices:
+  \begin{itemize}
+  \item On souhaite rendre l'utilisation de argument obligatoire, et afficher un message explicatif si cet argument unique n'est pas fournis.
+  \item ``Commiter''  la nouvelle version.
+  \item Retrouver la version précédente.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Test, Arguments}
+  
+  Exercices:
+  \begin{itemize}
+  \item On souhaite rendre l'utilisation de argument obligatoire, et afficher un message explicatif si cet argument unique n'est pas fournis.
+  \item ``Commiter''  la nouvelle version.
+  \item Retrouver la version précédente.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Boucles, liste}
+  Exercices:
+  \begin{itemize}
+  \item Écrire un programme qui affiche la moyenne de ses argument.
+  \item Lui faire également afficher la moyenne quadratique de ses arguments.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]\frametitle{Fonctions}
+  Syntaxe:
+  \fbox{\lstinputlisting[firstline=5,lastline=8,language=Python]{../examples/moyenne.py}}
+
+  Exercices:
+  \begin{itemize}
+  \item Écrire une fonction calculant la moyenne d'un nombre arbitraire de nombres.
+  \item Reprendre l'exemple précédant en utilisant cette fonction.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Fonctions}
+  La fonction peut être vue comme unité de compréhension.
+  
+  Découper son programme en fonction permet de le diviser en unités compréhensible quand sa taille augmente.
+
+  \begin{itemize}
+  \item De l'extérieur: on doit pouvoir comprendre ce que fait la fonction sans avoir besoin de lire son code.
+  \item De l'intérieur: on doit pouvoir vérifier que la fonction fait ce qu'elle est supposée faire.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Fonctions}
+  {\em De l'extérieur}
+  \begin{itemize}
+  \item Combien de mots vous faut il pour expliquer ce que fait votre fonction ?
+  \item Est-ce que votre fonction fait une chose, et une seule.
+  \item Son nom signifie t-il quelque chose de clair pour les personnes qui seront appelés à l'utiliser.
+  \item Avez vous besoin de dire {\em comment} elle le fait.
+  \end{itemize}    
+  {\em De l'intérieur:}
+  \begin{itemize}
+  \item Un collègue peut-il vérifier que la fonction est correcte (fait ce qu'elle prétend faire, et rien d'autre).
+  \item Sa taille lui permet elle de tenir sur une fenêtre de taille moyenne ?
+  \item Les noms des variables utilisés sont-ils significatifs.
+  \item Est ce que je la comprendrai dans 6 mois.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]\frametitle{Récurissivîté}
+  Une fonction peut s'appeler elle même:
+  
+  \fbox{\lstinputlisting[firstline=3,lastline=7,language=Python]{../examples/facto.py}}
+
+\end{frame}
+
+\begin{frame}{Saisie utilisateur}
+  La fonction {\tt raw\_input} permet de lire ce qui est tapé au clavier.
+
+  Exercice:
+  \begin{itemize}
+  \item Écrire une fonction qui retourne {\tt True} ou {\tt False} suivant que l'utilisateur est entré {\tt oui} ou {\tt non}.
+  \item Autoriser optionnellement les majuscules
+  \item Accepter deux listes: les chaînes correspondant à vrai, et celle correspondant à faux.
+  \item Accepter un paramètre spécifiant le nombre d'essais autorisés.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Paramètres par défaut}
+  Exercice: Donner des valeurs par défaut 'raisonnables' pour tout les paramètres sauf le prompt.
+\end{frame}
+
+\begin{frame}[fragile]\frametitle{Fonction comme variable}
+  Une fonction est un objet (à peu de choses près) comme un autre.
+  \fbox{\lstinputlisting{../examples/fct1classe.txt}}
+\end{frame}
+
+\begin{frame}[fragile]\frametitle{Fonction comme argument}
+  Exercices:
+  \begin{itemize}
+  \item Écrire une fonction {\bf appliquer} prenant en argument une liste et une fonction et affichant les images des éléments.
+  \item Écrire une fonction {\bf image} prenant en argument une liste et une fonction et {\em retournant} la liste des images.
+  \item Ecrire une fonction {\bf combiner} prenant en argument deux fonctions à un argument et retournant queslque chose de sensé.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]\frametitle{Modules}
+  Constats:
+  \begin{itemize}
+  \item Devoir retaper son code à chaque nouvelle session python est fastidieux.
+  \item Devoir écrire un script sur un seul fichier également, mais ce n'est pas le plus grave.
+    \begin{itemize}
+    \item Cela implique d'avoir plusieurs copies des fonctions/code.
+    \item Tout code doit être maintenu (ou est probablement bon à jeter). \linebreak
+      $doublerightarrow$ N copie $\equiv$ N tâche de maintenance
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]\frametitle{Modules}
+  \begin{columns}
+    \column{0.4\textwidth}
+    fibo.py:
+    \newline
+    \fbox{\lstinputlisting[language=Python]{../examples/fac.py}}
+    \column{0.4\textwidth}
+    list\_util.py:
+    \newline
+    \fbox{\lstinputlisting[language=Python]{../examples/list_util.py}}
+  \end{columns}
+  \fbox{\lstinputlisting{../examples/import.log}}
+\end{frame}
+
+\begin{frame}[fragile]\frametitle{Nommage}
+  
+  Le nommage des entités (fonctions, variables, modules, classe..) est l'un des problèmes les plus sous-estimés par les aspirants développeurs.\linebreak
+  Un ``bon'' nom:
+  \begin{itemize}
+  \item Un nom doit être significatif pour le lecteur (qui doit être identifié).
+  \item Un nom doit être significatif dans le(s) cadre(s) dans lequel il apparaît.
+  \item Pas trop verbeux pour ne pas ennuyer le lecteur.
+  \item Peut s'appuyer sur des abréviations {\em si elles sont largement acceptées par la communauté concernée}.
+  \item Peut s'appuyer sur des conventions.
+  \end{itemize}
+
+  {\em Apprendre à utiliser son éditeur de code est un investissement payant.}
+
+  {\em Le temps passé pour trouver un bon nom n'est pas du tremps perdu.}
+
+  {\em Il faut essayer d'anticiper les usage possible et/ou probables de son code.}
+  
+\end{frame}
+
+\begin{frame}[fragile]\frametitle{Import}
+  
+  L'utilisation de modules permet de faciliter le travail de nommage.
+  \begin{itemize}
+  \item En aidant à identifier le contexte d'utilisation. Un nom long étant remplacé par plusieurs nom courts.
+  \item En évitant lles conflit sur les noms les plus courant.
+  \item En permettant de renomer une entité lors d'un changement de contexte.
+  \end{itemize}
+  \fbox{\lstinputlisting{../examples/importrename.log}}
+  \fbox{\lstinputlisting{../examples/importall.log}}
+\end{frame}
+
+\begin{frame}[fragile]\frametitle{Modules ou commande ?}
+  Parfois, la limite entre module et commande n'est pas claire: {\bf facto.py} peut être utilisé à la fois comme module et comme commande:
+
+  Il est possible de se baser sur le {\em nom courant} du module pour distinguer un appel de commande d'une importation de module.
+
+  \fbox{\lstinputlisting[firstline=4]{../examples/mod_name.log}}
+
+  En terme de bonne pratique, il est possible d'utiliser cette fonctionnalité pour effectuer des tests basiques.
+  
+\end{frame}
+
+\begin{frame}{Tuples}
+  \begin{itemize}
+  \item Un tuple est un ``paquet'' ordonné et non modifiable de valeurs (éventuellement, d'autres tuples).
+    \newline\fbox{\tt t = 1, 42, 'bob', 3.14 }
+  \item Se consulte comme une liste:
+    \newline\fbox{\tt nom = t[2] }
+  \item  Peut être utilisé pour affecter plusieurs variables:
+    \newline\fbox{\tt nom, age = `Bob', 42 }
+  \item Peut être utilisé pour affecter plusieurs variables:
+    \newline\fbox{\tt quotient, reste = divmod(42, 7) }
+  \item Peut être mis dans dans des listes:
+    \newline\fbox{\tt student=[('Bob', 15), ('Alice', 16), ('Jane',15) ]}
+  \item Déjà utilisés dans la fontion de fibonacci.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Fichier}
+  Les fichiers peuvent se diviser en:
+  \begin{itemize}
+    \item fichiers textes
+      \begin{itemize}
+      \item Codé en ASCII: un chiffre $\equiv$ une lettre.
+      \item Interprêtables sans outils particuliers.
+      \item Peut efficace pour stocker des données.
+      \item Habituellement organisé en lignes.
+      \end{itemize}
+    \item fichiers binaires
+      \begin{itemize}
+      \item Contient des données brutes.
+      \item A généralement besoins d'outils dédier et/ou d'une description formelle.
+      \item Compact et précis.
+      \item Parfois dépendant de la plate-forme.
+      \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]\frametitle{fichiers textes en Python}
+  Exercices:
+  \begin{itemize}
+  \item Trouver la section consacrées au lecture/écriture de fichiers texte dans le tutoriel python.
+  \item Sachant qu'un fichier texte est vu comme une liste de ligne, écrire une programe réaffichant les lignes d'un fichier dont le nom est fourni en argument.
+    \begin{itemize}
+    \item Trouver le type d'une ligne (ou pourra s'aider de la fonction {\tt type}, de l'interprète {\bf python}, des fonctions {\tt readline}, et {\tt open}).
+    \item Chercher le manuel de référence de la librarie standard standard python. Y retrouver la documentation du type {\bf str}.
+    \item Modifier le programme pour suprimer le retour chariot.
+    \item Modifier le programme pour afficher le numero de ligne lors de l'affichage (indice: fonction {\tt enumerate}).
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]\frametitle{Git et les branches}
+  \begin{itemize}
+  \item Git permet non seulement de versionner, mais aussi de collaborer, y compris avec soi.
+  \item Votre dépôt peut héberger autant de {\em versions} différentes de votre code que vous le souhaitez.
+  \item Les branche vont nous permètre de:
+    \begin{itemize}
+    \item Faire des essais sans comprometre votre code.
+    \item De travailler sur différentes fonctionnalités en parallele.
+    \item De controler les integrations de ces fonctionnalités dans votre code {``principal''}.
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]\frametitle{Git et les branches}
+  Exercices:
+  \begin{itemize}
+  \item Créer un nouveau dépot avec {\tt git init}
+  \item Y ajouter le script python {\bf facto.py}, l'intégrer, commiter, taper {\tt git branch -v}
+  \item Créer une nouvelle branche nommée {\bf develop}, qu'observe t'on ?
+  \item Ajouter un fichier {\bf README}, controlé par git, et modifier le script.
+  \item Observer les différences entre les branches {\bf develop} et {\bf master}.
+  \item Sur la branche {\bf master}, modifier, différement, le script {\bf facto.py}.
+  \item Intégrer les modification de la branche {\bf develop} dans la branche {\bf master}.
+  \item Intégrer les modification de la branche {\bf master} dans la branche {\bf develop}.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]\frametitle{Git et remote}
+  Git est (aussi) un système de versionnage {\em distribué}.
+  \begin{itemize}
+    \item De même qu'il est possible de ``synchronizer'' des branches entre elles, il est possible de synchronizer des dépôts.
+    \item Même si cela n'a rien d'obligatoire, on décide souvent de donner à l'un de ses dépôt un rôle de dépôt de référence. Les dépôt sont généralement organisés en arbres de profondeur 1 dont le dépôt de référence est la racine.
+    \item Sans discipline, la situation devient rapidement ingérable.
+    \item Plusieurs platformes proposent des service d'hébergement de dépôt git: \url{https://github.com}, \url{https://about.gitlab.com}...
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]\frametitle{GitHub}
+  
+  Exercice:
+  \begin{itemize}
+  \item Créez vous un compte sur \url{https://www.github.com}
+  \item Créer un projet {\bf test}.
+  \item Il va falloir indiquer à github quels sont les comptes (couple machine/login) qui vous sont associés. Cela peut ce faire par {\em échange de clefs ssh}. 
+    \begin{itemize}
+    \item Trouver la documentation associée sur la page d'acceuil.
+    \item Quelles sont les précautions à prendre avant de générer un couple de clefs?
+    \item Mettre en œuvre et tester.
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]\frametitle{Git et remote}
+  Exercices: 
+  \begin{itemize}
+  \item Cloner le dépôt de la formation \url{https://github.com/bdartigues/python_cnrs_formation}.
+  \item Utiliser la commande {\tt git remote -v} et assurez vous que vous êtes bien sur la branche {\bf master}.
+  \item Dans le fichier {\tt intro/examples/users/users.txt}, ajouter une ligne en respectant le format utilisé.
+  \item S'intéroger sur les cause de dysfonctionement.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{GitHub et les Fork}
+  Vous pouvez dupliquer n'importe quel projet public sur votre espace GitHub.
+  
+  Cela vous permet de travailler sur vo propres modifications sans impacter le projet ``original''.
+
+  Exercice:
+  \begin{itemize}
+  \item Faire un fork de \url{https://github.com/bdartigues/python_cnrs_formation}
+  \item Que dit la commande {\tt git remote -v}
+  \item Le cloner sur son espace et répéter les modifications.
+  \item Utiliser la commande {\tt git push}.
+  \item Constater la mdification via l'interface web de GitHub.
+  \item Ajouter un remote {\bf main} corespondant à \url{https://github.com/bdartigues/python_cnrs_formation}.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{GitHub et Pull Request}
+  Sans accès ``collaborateur'' au projet original, vos contrinution se font via des {\em Pull Request} : vous aller proposer votre modification au projet principal, qui poura l'accepter, ou pas, ou discuter avec vous de sa pertinence.
+
+  Execice:
+  \begin{itemize}
+  \item Proposez, via une pull request, votre modification au c=projet original via l'interface web de GitHub.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{Collaborateur GitHub}
+  Le modèle Pull Request peut poser un problème de scalabilité lorsque le nombre d'intervenant est grand: Un seul ``propriétaire'' doit gérer toutes les évaluations de Pull Request.
+  
+  Ajouter un collaborateur permet de répartir la charge et d'être plus réactif.
+
+  Exercice:
+  \begin{itemize} 
+    \item Par binome, choisir un dépôt principal, et ajouter votre binome en collaborateur.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{Modle de developpement}
+  Un modèle de développement courant sur un projet public GitHub:
+  \begin{itemize}
+  \item Sur le dépôt principal:
+    \begin{itemize}
+    \item Un ``noyau dur'' de développeurs de confiance.
+    \item Deux branches principales:
+      \begin{itemize}
+      \item {\bf master} branche dont l'on tire les releaze, très surveillée et modifiée avec précaution.
+      \item {\bf develop} branche courante de développement, sur laquelle tout le monde se synchronize régulièrement. On y commite les ``petites'' modification ou les traveaux finalisés. 
+        Mergée sur {\bf master} après vérifications soignées.
+      \item plusieurs {\bf branches de travail} ou l'on dévelope une fonctionnalité sans perturber {\bf develop}, que l'on merge régulièrement.
+      \end{itemize}
+    \end{itemize}
+  \item Par ailleurs, sur les dépôts forkés, n'importe qui pouroa contribuer via des pull request.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{Aliasing}
+  En Python, il existe deux type de type: les non modifiables (entier, chaines, tuples) et les modifiable (listes, dictionnaires, et à peut prêt tout le reste.
+  
+  Exercice: 
+  \begin{itemize}
+  \item Ecrire un fonction modifiant l'entier qui lui est passé en argument et vérifier sa valeur une fois sa fonction exécutée.
+  \item Essayer avec d'autre types.
+  \item Avec des tuples.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{Tri}
+  Exercices:
+  \begin{itemize}
+  \item Ecrire un programme qui lise le fichier {\bf users.txt} et affiche les utilisateur listés avec le prénom avant le nom de famille. Passer par des tuples peut aider.
+  \item Modifier le programme pour que chaque utilisateur soit préfixé de son numero de ligne.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{Classes}
+  A partir du chapitre sur les classes du tutoriel, déterminer à quoi ressemblerait une classe {\bf Person}. 
+  \begin{itemize}
+  \item Sachant que l'on s'intéresse à ses noms, prénoms, dates de naissance et description.
+  \item Que l'on veut pouvoir initializer une instance de {\bf Personne} avec ses 4 informations.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{argparse}
+  Exercice:
+  \begin{itemize}
+  \item Aller regarder dans la documentation de la librairie standard de Python, plus précisement dans le chapitre {\bf Generic Operating System Services}. Nous cherchons quelque chose pour lire des arguments de la ligne de commande.
+  \item Modifier le programe précédent pour qu'il prennent deux argument, {\bf -i} et {\bf -o} permétant de préciser respectivement le fichier d'entrée et le fichier de sortie. 
+  \end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{Tri}
+  Exercice:
+  \begin{itemize}
+  \item Pour chaque binome, choisir un dépôt. S'assure de l'existance d'une branche {\bf develop}.
+  \item L'un va afficher la liste triée par nom, l'autre par date, en conditionnant cette action par une option {\bf --byname} ou {\bf --byage} respectivement. Le travail sera effectué sur une branche spécifique à créer.
+  \item Repercuter les changement sur {\bf develop}.
+  \item détruire les branches.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{Exceptions}
+\end{frame}
+
+\end{document}

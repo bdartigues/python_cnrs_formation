@@ -1,0 +1,100 @@
+Objectifs:
+
+L'objectif est qu'à l'issue du stage, les participants soient capables de maintenir et développer de façon collaborative une application d'analyse de données biologique Python. 
+Pour cela les notions suivantes seront abordées:
+
+1. Première approche du langage Python
+2. Ecrire des scripts simples avec le langage Python3. Apprendre à gérer à plusieurs un projet avec Git4. Manipuler Les structures de données 
+5. Comprendre les modules en python6. Mener des analyses bioinformatique avec Biopython
+
+Prérequis:
+
+Aucun prérequis en matière de programmation. Le stage s’effectuera sous Linux en mode ligne de commande. Savoir utiliser un éditeur de texte est conseillé.
+
+Programme:
+
+Cette formation introduira le langage Python, l’outil de gestion de projet Git, ainsi que le module Biopython permettant l'analyse de données biologiques.
+- Le langage Python et ses commandes essentielles- Le logiciel Git de gestion de version
+- Les structures de données en Python- Approche des classes et de la programmation objet- Les modules en Python- Le module Biopython- Le traitement de données biologique avec le module Biopython
+
+Les inscriptions se font sur le site web du CNRS Formation indiqué ci-dessous:
+
+http://cnrsformation.cnrs.fr/stage.php?stage=
+
+Pour toute information complémentaire (public visé, niveau, cout, ...), merci de contacter:
+
+- Alain Miniussi (alain.miniussi@oca.eu)
+- Benjamin Dartigues (benjamin.dartigues@u-bordeaux.fr)
+
+
+programme_détaillé.txt
+
+La formation mélangera cours et TP. Les stagiaires se familiariseront avec chaque notion présentée et créant ou manipulant des codes.
+Le programme ainsi que le découpage des journées pourra évoluer en fonction du public.
+
+*) Jour 1:
+Présentation non approfondie du Langage Python.
+Les stagiaires manipuleront le langage à travers l'interprète puis via des scripts.
+L'objectif est de pouvoir écrire des scripts simples sur un fichier à la fin de la journée.
+ - historique
+ - Python comme Interprète de commande
+ - types de base, opérateurs : présentation et manipulation
+ - aiguillages
+ - hello world
+ - premiers scripts
+ - listes
+ - boucles
+ - fonctions
+ - utilisation de librairies
+ - introduction au entrées/sorties
+
+*) Jour 2:
+Présentations de Git.
+Les stagiaire, qui peuvent désormais écrire des scripts simples, les manipuleront de façon collaborative à l'aide de Git.
+- présentations des principaux types de systèmes de versionnage.
+- création et utilisation d'un dépôt local
+-- utilisation comme système de préservation d'historique
+-- introduction au branches
+- clonage et synchronisation avec un dépôt existant
+- mode multi-joueur
+- présentations des bonnes pratiques pour des collaborations harmonieuses
+- avoir un compte sur GitHub
+-- authentification
+-- gestion des clefs
+-- requêtes de merge
+-- discussions
+
+*) Jour 3:
+Python "avancé".
+Les fonctionnalités que les stagiaires seront amené à rencontrer seront présentées de intérieurs. Ceci afin qu'il puisse avoir un certain recul par rapport à des fonctionnalités même s'il ne seront pas amenés à les mettre en œuvre. Les exercices seront toujours effectués à travers Git et de façon collaborative afin que les stagiaires se familiarisent avec ce mode de travail.
+- Structures de données
+-- Listes avancées
+-- ensembles, dictionnaire, tuple
+-- boucles avancées
+- modules
+- exceptions
+- classes
+-- définition, attributs, méthodes
+-- itération
+
+*) Jour 4:
+Le module Biopython
+L'objectif pour les stagiaires est de manipuler des séquences et de fichiers de séquences à l'aide du module BioPython et d'adapter le traitement suivant le type d'analyse
+- L'objet Seq (Bio.Seq)
+-- Séquences nucléotidique et protéique, reverse complément, Transcription,Translation (TP en relation avec le chapitre)
+- L'objet SeqRecord (Bio.SeqRecord)
+-- FASTA-Genbank, Features, Positions and Location (TP en relation avec le chapitre)
+- Alignement/mapping de séquences (Bio.AlignIO)
+-- Utilisation de BLAST, ClustalW (TP en relation avec le chapitre)
+- Parser et lire, convertir des séquences (Bio.SeqIO) (Récupération des données nécessaires à l'analyse (TP en relation avec le chapitre)
+-- À partir d'un fichier ou des bases de données en ligne (Entry NCBI database (Bio.Entrez) et Swiss-prot database (Bio.SwissProt))
+-- Nettoyage et filtrage des fichiers fastq 
+-- Conversion de format (fastq/fasta)
+
+
+2 idées de TP 
+1- Aligner sequences protéiques, faire un bootstrapping, trouver matrices de distances et créer
+un arbre phylogénétique en utilisant le neighbor-joining.
+2- Récupérer des résultats chip-seq ou micro-array (fasta) matchant un motif particulier, retrouver
+les régions en amont de la sequence correspondant au motif, et chercher pour des motifs conservés.
+

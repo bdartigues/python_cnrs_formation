@@ -1,0 +1,11 @@
+>>> def square(x):  return x**2
+... 
+>>> f=square
+>>> f(2)
+4
+>>> g=lambda x: x**2
+>>> g(2)
+4
+>>> f(2) == g(2)
+True
+>>> 

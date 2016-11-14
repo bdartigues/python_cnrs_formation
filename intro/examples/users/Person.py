@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 from datetime import date
+import datetime
 
 class Person:
     def __init__(self, first_name, last_name, birth_date, desc = None):
@@ -14,8 +15,13 @@ class Person:
             self.description = "Your average chap."
             
     def age(self):
-        return datetime.today.year - self.birth_date.year
+        return datetime.date.today() - self.birth_date
 
+    def __str__(self):
+        return "{0.first_name} {0.last_name}".format(self)
+
+    def __str__(self):
+        return "{0.first_name} {0.last_name} ({1})".format(self, self.age())
     
 if (__name__ == '__main__'):
     print "Exercice Person class"
@@ -33,6 +39,9 @@ if (__name__ == '__main__'):
 
     for i, p in enumerate(persons):
         print "{0}: {1.last_name}, {1.first_name} {1.birth_date}".format(i,p)
+
+    for i, p in enumerate(persons):
+        print "{0}: {1}".format(i,p)
 
         
         

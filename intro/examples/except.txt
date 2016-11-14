@@ -1,0 +1,6 @@
+>>> try:
+...     a='c'
+...     c=a+2
+...     print c
+... except TypeError as e:
+...     print "Something went wrong with typing:", e

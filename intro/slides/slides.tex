@@ -649,13 +649,49 @@ Ex: trouver comment lancer le mode interactif en partant de google/qwant/duckduc
   Exercice:
   \begin{itemize}
   \item Pour chaque binôme, choisir un dépôt. S'assure de l'existence d'une branche {\bf develop}.
-  \item L'un va afficher la liste triée par nom, l'autre par date, en conditionnant cette action par une option {\bf --byname} ou {\bf --byage} respectivement. Le travail sera effectué sur une branche spécifique à créer.
+  \item L'un va afficher la liste triée par nom, l'autre par date, en conditionnant cette action par une option {\bf --sortbyt name} ou {\bf --sortby age} respectivement. Le travail sera effectué sur une branche spécifique à créer.
   \item Répercuter les changement sur {\bf develop}.
-  \item détruire les branches.
+  \item Détruire les branches de travail.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{Gestion d'erreurs}
+  La gestion d'erreur est un aspect souvent n'egligé de la gestion de code, surtout dans les scripts.
+  
+  Les erreurs qu'un programe doit gérer peuvent provenir:
+  \begin{itemize}
+  \item D'entrées mal formatées.
+  \item De problèmes matériel, de resources.
+  \item D'erreurs à l'interieurs du programme.
+  \item ...
+  \end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{Problèmatique de la gestion d'erreur}
+  \begin{itemize}
+  \item Anticiper tout ce qui peut aller mal est très laborieux.
+  \item Le code dédié à la gestion d'erreurs peut vite rendre le code ``normal'' illisible.
+  \item Dans certains cas, le code de gestion d'erreur peut ralentir l'application.
+  \end{itemize}
+  Évaluer le niveau de paranoia requis en fonction:
+  \begin{itemize}
+  \item La criticité de l'application.
+  \item Des concéquences d'un eventuelle erreur.
+  \item Qu'est ce qu'on peut faire ?
   \end{itemize}
 \end{frame}
 
 \begin{frame}\frametitle{Exceptions}
+  Il y a plusieurs façons d'aborder la gestion d'erreur, qui peuvent s'entreméler.
+  \begin{itemize}
+  \item Ne pas les gérer.
+  \item Les gérer via le code de retour des fonctions (pas toujours simple ou possible)
+  \item Via les exception: c'est le choix habituel en python.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]\frametitle{Exemples (naifs)}
+  \lstinputlisting[language=Python]{../examples/except.txt}  
 \end{frame}
 
 \end{document}

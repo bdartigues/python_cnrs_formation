@@ -1,4 +1,7 @@
-from math import sqrt
+#!/usr/bin/env python
+
+from math import *
+import sys
 
 def appliquer(l,f):
     for x in l:
@@ -23,6 +26,11 @@ def moyenne(l):
 def quadratic(l):
     return sqrt(moyenne([x**2 for x in l]))
 
-
-
+if __name__ == '__main__':
+    if abs(quadratic([2]) - 2) > 0.00001:
+        print "Problem"
+        sys.exit(-1)
+    else:
+        print "OK"
+        sys.exit(0)
 

@@ -8,6 +8,12 @@ from Blast.functions import *
 from Plot_Interface.functions import *
 
 import os
+import sys
+print sys.argv[0]
+nbarg=len(sys.argv)
+print nbarg
+
+
 
 def get_or_create_dir(dirname):
     if not os.path.isdir(dirname):

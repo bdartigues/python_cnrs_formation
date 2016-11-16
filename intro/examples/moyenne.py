@@ -10,5 +10,6 @@ if (len(sys.argv) != 3):
     print "Usage: {0} <a> <b>".format(sys.argv[0])
 else:
     a, b = float(sys.argv[1]), float(sys.argv[2])
-    print "Moyenne de {0} et {1}: {2}".format(a,b,moyenne(a,b))
+    moy = moyenne(a,b)
+    print "Moyenne de {0} et {1}: {2}".format(a,b,moy)
 

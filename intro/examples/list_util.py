@@ -18,7 +18,7 @@ def moyenne(l):
     if sz == 0:
         return 0
     else:
-        return somme(l)/len(l)
+        return somme(l)/sz
 
 def quadratic(l):
     return sqrt(moyenne([x**2 for x in l]))

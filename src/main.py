@@ -10,6 +10,7 @@ from Plot_Interface.functions import *
 import os
 import sys
 print sys.argv[0]
+
 nbarg=len(sys.argv)
 print nbarg
 
@@ -27,6 +28,8 @@ if __name__ == "__main__":
 
 #####SEQ PART 
     fasta_file="ls_orchid.fasta"
+    fasta_seq="seqs.fasta"
+    
     sequence=create_sequence('GATCGATGGGCCTATATAGGATCGAAAATCGC')
     #print get_sequence_lenght(sequence)
     #print count_letter_in_sequence(sequence,"G")
@@ -36,7 +39,6 @@ if __name__ == "__main__":
     
 #####SEQ RECORD PART
     
-    #seq_record=read_fasta_file_with_multiple_sequence(data_dir+fasta_file)
     #for record in seq_record:
     #    print(record.id)
     #    print(repr(record.seq))
@@ -80,13 +82,13 @@ if __name__ == "__main__":
     
     
     
-    #fasta_string = open(data_dir+fasta_file).read()
+    #fasta_string = open(data_dir+fasta_seq).read()
     #run_qblast_from_fasta(fasta_string,"blastn", "nt")
-    #record = SeqIO.read(data_dir+fasta_file, format="fasta")
-    #run_qblast_from_seq_record(record,"blastn", "nt")
-    
-    
-    
+    record=read_fasta_file_with_one_sequence(data_dir+fasta_seq)
+    print record
+    handle=run_qblast_from_seq_record(record,"blastn", "nt")
+        
+
     #PLOT INTERFACE
     
     histogram(data_dir+fasta_file)

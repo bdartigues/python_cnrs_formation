@@ -2,8 +2,10 @@
 
 import sys
 
+# Compute the factorial n! of a positive integer.
+# Can easilly overflow
 def fac(n):
-    if (n == 1):
+    if (n == 1): # if n is 1, return 1 //  BAD
         return 1
     else:
         return n*fac(n-1)

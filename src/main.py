@@ -28,7 +28,7 @@ if __name__ == "__main__":
 
 #####SEQ PART 
     fasta_file="ls_orchid.fasta"
-    fasta_seq="seqs.fasta"
+    fasta_seq="seq1.fasta"
     
     sequence=create_sequence('GATCGATGGGCCTATATAGGATCGAAAATCGC')
     #print get_sequence_lenght(sequence)

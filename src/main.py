@@ -1,6 +1,7 @@
 #!/usr/bin/python
 #here call all the module created
 #import functions
+import Bio
 from Seq.functions import *
 from SeqRecord.functions import *
 from NCBI.functions import *
@@ -48,7 +49,7 @@ if __name__ == "__main__":
     #dict_record=get_available_databases_as_dict()
     
     
-#####NCBI PART 
+    # NCBI PART
     #record=get_field_for_pubmed_search()
     #record=search_for_paper("biopython")
     #search_for_author_publication()
@@ -60,15 +61,11 @@ if __name__ == "__main__":
     #filename = data_dir+"gi_"+gi+".gbk"
     #download_gb_file_record(filename)
     
-    ###EGQUERY PART
-    
+    # EGQUERY PART
     #global_search("potyvirus")
-    
     #get_all_genes()
-    #BLAST PART
 
-    
-    
+    # BLAST PART
     #handle=run_qblast("blastn", "nt", "8332116")
     #save_file = open(data_dir+"my_blast.xml", "w")
     #save_file.write(handle.read())

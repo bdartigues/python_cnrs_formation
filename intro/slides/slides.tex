@@ -328,9 +328,12 @@ Exercice: trouver comment lancer le mode interactif en partant de google/qwant/d
 \end{frame}
 
 \begin{frame}[fragile]\frametitle{Fonctions}
-  Syntaxe:
-  \fbox{\lstinputlisting[firstline=5,lastline=8,language=Python]{../examples/moyenne.py}}
+  \begin{itemize}
+  \item Définition:
+    \lstinputlisting[firstline=5,lastline=8,language=Python]{../examples/moyenne.py}
+  \item Appel: \verb|m=moyenne(1,3)|
 
+  \end{itemize}
   Exercices:
   \begin{itemize}
   \item Écrire une fonction calculant la moyenne d'un nombre arbitraire de nombres.
@@ -419,13 +422,13 @@ Exercice: trouver comment lancer le mode interactif en partant de google/qwant/d
 \begin{frame}[fragile]\frametitle{Modules}
   \begin{columns}
     \column{0.4\textwidth}
-    fibo.py:
+    fac.py:
     \newline
     \fbox{\lstinputlisting[language=Python]{../examples/fac.py}}
     \column{0.4\textwidth}
     list\_util.py:
     \newline
-    \fbox{\lstinputlisting[language=Python]{../examples/list_util.py}}
+    \fbox{\lstinputlisting[language=Python,firstline=4,lastline=12]{../examples/list_util.py}}
   \end{columns}
   \fbox{\lstinputlisting{../examples/import.log}}
 \end{frame}

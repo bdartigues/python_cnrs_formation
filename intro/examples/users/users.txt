@@ -1,0 +1,18 @@
+Lamarre; Peter; 14/12/1980; Bergonie Bordeaux
+Chapman; Graham; 08/01/1941; aka The Colonel
+Cleese; John; 27/10/1939; aka Silly Walker
+Gilliam; Terry; 22/11/1940; aka The Transition Guy
+Idle; Eric; 23/03/1943; aka The Songwriter
+Jones; Terry; 01/02/1942; aka The Other Terry
+Palin; Michael;05/05/1943; aka The Crucifixion Facilitator
+Cleveland; Carol; 13/01/1942; aka the &th Python
+Brambilla; Elisa; 29/10/1986; aka The Italian Mess
+Immel; Françoise; 27/02/1968;
+Gallay; Ines; 30/01/1962; CNRS Paris 
+Capdevielle; Claire; 07/09/1983; aka The Spectator
+Wagner; Stefanie; 09/08/1982; INRA Bordeaux
+Stan; Adrian; 08/02/1980; aka Account3
+debroas; didier; 26/05/1963; UCA
+Brault; Veronique; 09/02/1971; CNRS Strasbourg
+Lanneau; Christophe; 09/09/1968; sanofi
+Radomski; Nicolas; 02/03/1981; Anses

@@ -4,8 +4,8 @@ from math import *
 import sys
 
 def appliquer(l,f):
-    for x in l:
-        print "{0} -> {1}".format(x,f(x))
+  for x in l:
+    print "{}->{}".format(x,f(x))
 
 def image(l, f):
     return [ f(x) for x in l]

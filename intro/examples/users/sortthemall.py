@@ -5,7 +5,7 @@ import sys
 from datetime import date
 
 argparser = argparse.ArgumentParser(description="User list sorting program.")
-argparser.add_argument('-s','--sortby', metavar='OUPUT', type=str, choices=['name', 'age'],
+argparser.add_argument('-s','--sortby', type=str, choices=['name', 'age'],
                        help='The sort criteria.', default='name')
 
 simple_arg_parsing = True

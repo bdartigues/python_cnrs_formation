@@ -20,21 +20,13 @@ Lacroix; Sebastien; 15/03/1979; VERI_SLA
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 =======
 Fourcans; Aude; 17/01/1977; aka VERI AFO
 Brault; Veronique; 09/02/1971; CNRS Strasbourg
 Lanneau; Christophe; 09/09/1968; sanofi
 Radomski; Nicolas; 02/03/1981; Anses
 >>>>>>> 9e863fb932d9877b3c8ae7be940b33956aa547de
+=======
+Miniussi; Alain; 27/08/1868; carbon based lifeform
+
+>>>>>>> Stashed changes
